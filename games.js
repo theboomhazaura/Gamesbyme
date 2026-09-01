@@ -22,4 +22,12 @@ const GAMES = [
   color: "moss",   // optional — "clay" | "moss" | "teal"
   image: "images/IMG_2491.jpeg"
 },
+
+{
+  title: "city simulation",
+  slug: "citybuilder",
+  description: "build a city and watch it rise",
+  color: "teal",   // optional — "clay" | "moss" | "teal"
+  image: "images/IMG_2492.jpeg"
+},
 ];

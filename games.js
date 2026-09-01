@@ -24,7 +24,7 @@ const GAMES = [
 },
 
 {
-  title: "city simulation",
+  title: "isotown",
   slug: "citybuilder",
   description: "build a city and watch it rise",
   color: "teal",   // optional — "clay" | "moss" | "teal"

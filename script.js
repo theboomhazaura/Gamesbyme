@@ -11,14 +11,14 @@
     card.href = `games/${game.slug}/index.html`;
 
     card.innerHTML = `
-      <div class="cartridge-notch"></div>
-      <div class="cartridge-label">
-        <h2 class="cartridge-title">${escapeHtml(game.title)}</h2>
-        <p class="cartridge-desc">${escapeHtml(game.description || '')}</p>
-      </div>
-      <span class="cartridge-play">Play &rarr;</span>
-    `;
-
+    <div class="cartridge-notch"></div>
+    <div class="cartridge-label">
+    ${game.image ? `<img src="${game.image}" alt="${escapeHtml(game.title)}" class="cartridge-image">` : ''}
+    <h2 class="cartridge-title">${escapeHtml(game.title)}</h2>
+    <p class="cartridge-desc">${escapeHtml(game.description || '')}</p>
+  </div>
+  <span class="cartridge-play">Play &rarr;</span>
+`;
     shelf.appendChild(card);
   });
 

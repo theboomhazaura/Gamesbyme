@@ -13,3 +13,4 @@ const GAMES = [
   description: "fly a plane in an infinite world",
   color: "teal"   // optional — "clay" | "moss" | "teal"
 },
+];

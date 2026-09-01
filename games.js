@@ -13,4 +13,11 @@ const GAMES = [
   description: "fly a plane in an infinite world",
   color: "teal"   // optional — "clay" | "moss" | "teal"
 },
+
+{
+  title: "cyberscapes",
+  slug: "cyberscapes",
+  description: "you are a in a glass tunnel overlooking duskwater.",
+  color: "moss"   // optional — "clay" | "moss" | "teal"
+},
 ];

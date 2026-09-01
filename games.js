@@ -7,10 +7,9 @@
 
 const GAMES = [
   // Delete or replace this once you've added your first real game:
-  {
-    title: "Example Game",
-    slug: "example-game",
-    description: "A placeholder — swap this folder for your own game.",
-    color: "clay"
-  },
-];
+{
+  title: "flight simulator",
+  slug: "flightsim",
+  description: "fly a plane in an infinite world",
+  color: "teal"   // optional — "clay" | "moss" | "teal"
+},

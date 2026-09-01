@@ -30,4 +30,12 @@ const GAMES = [
   color: "teal",   // optional — "clay" | "moss" | "teal"
   image: "images/IMG_2492.jpeg"
 },
+
+{
+  title: "rosswood coffee shop",
+  slug: "rosswoodcoffee",
+  description: "run a coffee shop for 10 days and become a millionare (or not)",
+  color: "clay",   // optional — "clay" | "moss" | "teal"
+  image: "images/IMG_2496.jpeg"
+},
 ];

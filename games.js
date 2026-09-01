@@ -9,7 +9,7 @@ const GAMES = [
   // Delete or replace this once you've added your first real game:
 {
   title: "flight simulator",
-  slug: "Flightsim",
+  slug: "flightsim",
   description: "fly a plane in an infinite world",
   color: "teal"   // optional — "clay" | "moss" | "teal"
 },

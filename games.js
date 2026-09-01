@@ -15,8 +15,8 @@ const GAMES = [
 },
 
 {
-  title: "cyberscapes",
-  slug: "cyberscapes",
+  title: "Cyberscapes",
+  slug: "Cyberscapes",
   description: "you are a in a glass tunnel overlooking duskwater.",
   color: "moss"   // optional — "clay" | "moss" | "teal"
 },

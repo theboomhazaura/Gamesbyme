@@ -11,7 +11,7 @@ const GAMES = [
   title: "flight simulator",
   slug: "flightsim",
   description: "fly a plane in an infinite world",
-  color: "teal"   // optional — "clay" | "moss" | "teal"
+  color: "teal",   // optional — "clay" | "moss" | "teal"
   image: "IMG_2490.jpeg"
 },
 

@@ -26,18 +26,6 @@ card.href = href;
     shelf.appendChild(card);
   });
 
-  // Always show a couple of empty slots so the shelf reads as "add more here"
-  const emptySlots = games.length === 0 ? 3 : 1;
-  for (let i = 0; i < emptySlots; i++) {
-    const slot = document.createElement('div');
-    slot.className = 'slot-empty';
-    slot.innerHTML = `
-      <p class="slot-empty-label">Empty slot</p>
-      <p>Drop a game into /games and add it to games.js</p>
-    `;
-    shelf.appendChild(slot);
-  }
-
   function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;

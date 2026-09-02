@@ -12,7 +12,8 @@ const GAMES = [
   slug: "flightsim",
   description: "fly a plane in an infinite world",
   color: "teal",   // optional — "clay" | "moss" | "teal"
-  image: "images/IMG_2490.jpeg"
+  image: "images/IMG_2490.jpeg",
+  catogory: "GAMESBYME"
 },
 
 {
@@ -20,7 +21,8 @@ const GAMES = [
   slug: "Cyberscapes",
   description: "you are a in a glass tunnel overlooking duskwater.",
   color: "moss",   // optional — "clay" | "moss" | "teal"
-  image: "images/IMG_2491.jpeg"
+  image: "images/IMG_2491.jpeg",
+  catogory: "GAMESBYME"
 },
 
 {
@@ -28,7 +30,8 @@ const GAMES = [
   slug: "citybuilder",
   description: "build a city and watch it rise",
   color: "teal",   // optional — "clay" | "moss" | "teal"
-  image: "images/IMG_2492.jpeg"
+  image: "images/IMG_2492.jpeg",
+  catogory "GAMESBYME"
 },
 
 {
@@ -36,7 +39,8 @@ const GAMES = [
   slug: "rosswoodcoffee",
   description: "run a coffee shop for 10 days and become a millionare (or not)",
   color: "clay",   // optional — "clay" | "moss" | "teal"
-  image: "images/IMG_2496.jpeg"
+  image: "images/IMG_2496.jpeg",
+  catogory "GAMESBYME"
 },
 
 { 
@@ -44,7 +48,8 @@ const GAMES = [
   slug: "fnaf1",
   description: "survive 5 nights at freddys",
   color: "clay",
-  image: "images/IMG_2498.jpeg" // optional — "clay" | "moss" | "teal"
+  image: "images/IMG_2498.jpeg", // optional — "clay" | "moss" | "teal"
+  catogory "Horror"
 },
 
 
@@ -53,7 +58,8 @@ const GAMES = [
   slug: "geometrydashlite",
   description: "rithem based platformer",
   color: "moss",
-  image: "images/IMG_2500.jpeg" // optional — "clay" | "moss" | "teal"
+  image: "images/IMG_2500.jpeg", // optional — "clay" | "moss" | "teal"
+  catogory: "platformer"
 },
   
 {
@@ -62,7 +68,9 @@ const GAMES = [
   description: "a game about jumping (not mine)",
   color: "teal",
   image: "images/IMG_2497.jpeg",
-  embedUrl: "https://challengerush.com/"
+  embedUrl: "https://challengerush.com/",
+  catogory: "platformer"
+
 },
   
 ];

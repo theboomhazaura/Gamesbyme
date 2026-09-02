@@ -13,7 +13,7 @@ const GAMES = [
   description: "fly a plane in an infinite world",
   color: "teal",   // optional — "clay" | "moss" | "teal"
   image: "images/IMG_2490.jpeg",
-  catogory: "GAMESBYME"
+  category: "GAMESBYME"
 },
 
 {
@@ -22,7 +22,7 @@ const GAMES = [
   description: "you are a in a glass tunnel overlooking duskwater.",
   color: "moss",   // optional — "clay" | "moss" | "teal"
   image: "images/IMG_2491.jpeg",
-  catogory: "GAMESBYME"
+  category: "GAMESBYME"
 },
 
 {
@@ -31,7 +31,7 @@ const GAMES = [
   description: "build a city and watch it rise",
   color: "teal",   // optional — "clay" | "moss" | "teal"
   image: "images/IMG_2492.jpeg",
-  catogory "GAMESBYME"
+  category: "GAMESBYME"
 },
 
 {
@@ -40,7 +40,7 @@ const GAMES = [
   description: "run a coffee shop for 10 days and become a millionare (or not)",
   color: "clay",   // optional — "clay" | "moss" | "teal"
   image: "images/IMG_2496.jpeg",
-  catogory "GAMESBYME"
+  category: "GAMESBYME"
 },
 
 { 
@@ -49,7 +49,7 @@ const GAMES = [
   description: "survive 5 nights at freddys",
   color: "clay",
   image: "images/IMG_2498.jpeg", // optional — "clay" | "moss" | "teal"
-  catogory "Horror"
+  category: "Horror"
 },
 
 
@@ -59,7 +59,7 @@ const GAMES = [
   description: "rithem based platformer",
   color: "moss",
   image: "images/IMG_2500.jpeg", // optional — "clay" | "moss" | "teal"
-  catogory: "platformer"
+  category: "platformer"
 },
   
 {
@@ -69,7 +69,7 @@ const GAMES = [
   color: "teal",
   image: "images/IMG_2497.jpeg",
   embedUrl: "https://challengerush.com/",
-  catogory: "platformer"
+  category: "platformer"
 
 },
   

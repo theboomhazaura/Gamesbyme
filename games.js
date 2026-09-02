@@ -44,6 +44,7 @@ const GAMES = [
   slug: "challengerush",
   description: "a game about jumping (not mine)",
   color: "teal",
+  image: "images/IMG_2497.jpeg",
   embedUrl: "https://challengerush.com/"
 },
   

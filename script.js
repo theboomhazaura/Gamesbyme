@@ -26,6 +26,62 @@ card.href = href;
     shelf.appendChild(card);
   });
 
+// Dynamic Game Shelf Renderer
+function renderShelf(categoryFilter = "all") {
+  const shelfContainer = document.getElementById("shelf-container");
+  if (!shelfContainer) return;
+
+  shelfContainer.innerHTML = "";
+
+  const filteredGames = GAMES.filter(game => {
+    if (categoryFilter === "all") return true;
+    return game.category === categoryFilter;
+  });
+
+  filteredGames.forEach(game => {
+    const gameLink = game.embedUrl || `games/${game.slug}/index.html`;
+    const cardColor = game.color || "teal";
+
+    const card = document.createElement("a");
+    card.href = gameLink;
+    card.className = `game-card ${cardColor}`;
+
+    card.innerHTML = `
+      <img src="${game.image}" alt="${game.title}" />
+      <h3>${game.title}</h3>
+      <p>${game.description}</p>
+    `;
+
+    shelfContainer.appendChild(card);
+  });
+}
+
+// Tab Click Handler (Brr Brr Patipim speed)
+function filterCategory(evt, categoryName) {
+  const buttons = document.getElementsByClassName("tab-btn");
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove("active");
+  }
+  
+  if (evt && evt.currentTarget) {
+    evt.currentTarget.classList.add("active");
+  }
+
+  renderShelf(categoryName);
+}
+
+// 🚨 PANIC BUTTON (Instant Cloak to Google Docs)
+window.addEventListener('keydown', (e) => {
+  if (e.code === 'Backquote' || e.key === '~') {
+    window.location.href = 'https://docs.google.com';
+  }
+});
+
+// Load games automatically when DOM is ready
+window.addEventListener("DOMContentLoaded", () => {
+  renderShelf("all");
+});
+  
   function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;

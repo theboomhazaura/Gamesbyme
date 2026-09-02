@@ -23,8 +23,8 @@
 
  <script>
   // Instant Panic Switch
-  window.addEventListener('keydown', (~) => {
-    if (~.key === '`') {
+  window.addEventListener('keydown', (e) => {
+    if (e.key === '~') {
       window.location.href = 'https://docs.google.com';
     }
   });

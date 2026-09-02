@@ -47,6 +47,14 @@ const GAMES = [
   image: "images/IMG_2498.jpeg" // optional — "clay" | "moss" | "teal"
 },
 
+
+{ 
+  title: "geometry dash lite",
+  slug: "geometrydashlite",
+  description: "rithem based platformer",
+  color: "moss",
+  image: "images/IMG_2500.jpeg" // optional — "clay" | "moss" | "teal"
+},
   
 {
   title: "challenge rush",

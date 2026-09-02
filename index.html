@@ -20,7 +20,27 @@
 </header>
 
 <main class="shelf" id="shelf">
-  <!-- Cartridge cards are rendered here by script.js -->
+
+ <script>
+  // Instant Panic Switch
+  window.addEventListener('keydown', (~) => {
+    if (~.key === '`') {
+      window.location.href = 'https://docs.google.com';
+    }
+  });
+
+  // Cloak tab name/icon on button click
+  function cloakTab() {
+    document.title = "My Drive - Google Drive";
+    let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+</script> 
+  
+<!-- Cartridge cards are rendered here by script.js -->
 </main>
 
 <footer class="site-footer">

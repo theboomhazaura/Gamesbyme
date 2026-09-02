@@ -158,34 +158,6 @@ code {
 .cartridge--teal .cartridge-notch { background: var(--teal); }
 .cartridge--teal .cartridge-label { background: var(--teal); }
 
-/* ---------- Empty slot ---------- */
-
-.slot-empty {
-  border: 1.5px dashed rgba(255,255,255,0.18);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--text-dim);
-  min-height: 160px;
-}
-
-.slot-empty-label {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: var(--text-dim);
-  margin: 0 0 0.35rem;
-}
-
-.slot-empty p {
-  margin: 0;
-  font-size: 0.85rem;
-  max-width: 22ch;
-}
 
 /* ---------- Footer ---------- */
 

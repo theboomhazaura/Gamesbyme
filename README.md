@@ -1,4 +1,4 @@
-# The Shelf
+# adless
 
 A tiny, static game hub. No build step, no framework — plain HTML/CSS/JS, ready to deploy on GitHub Pages.
 

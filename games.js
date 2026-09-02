@@ -38,4 +38,13 @@ const GAMES = [
   color: "clay",   // optional — "clay" | "moss" | "teal"
   image: "images/IMG_2496.jpeg"
 },
+
+{
+  title: "challenge rush",
+  slug: "challengerush",
+  description: "a game about jumping (not mine)",
+  color: "teal",
+  embedUrl: "https://challengerush.com/"
+},
+  
 ];

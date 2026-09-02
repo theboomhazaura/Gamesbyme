@@ -43,7 +43,8 @@ const GAMES = [
   title: "five nights at freddys 1",
   slug: "fnaf1",
   description: "survive 5 nights at freddys",
-  color: "clay"   // optional — "clay" | "moss" | "teal"
+  color: "clay",
+  image: "images/IMG_2498.jpeg" // optional — "clay" | "moss" | "teal"
 },
 
   

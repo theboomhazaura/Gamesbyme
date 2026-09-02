@@ -8,7 +8,11 @@
 
     const card = document.createElement('a');
     card.className = `cartridge cartridge--${color}`;
-    card.href = `games/${game.slug}/index.html`;
+    const href = game.embedUrl
+  ? `play.html?src=${encodeURIComponent(game.embedUrl)}`
+  : `games/${game.slug}/index.html`;
+
+card.href = href;
 
     card.innerHTML = `
     <div class="cartridge-notch"></div>

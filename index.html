@@ -39,6 +39,111 @@
     document.getElementsByTagName('head')[0].appendChild(link);
   }
 </script> 
+
+<style>
+    /* Tab Navigation Styling */
+    .tab-container {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .tab-btn {
+      background: #18181b;
+      color: #a1a1aa;
+      border: 2px solid #27272a;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .tab-btn:hover {
+      color: #ffffff;
+      border-color: #3f3f46;
+      transform: translateY(-1px);
+    }
+
+    .tab-btn.active {
+      background: #00ff88;
+      color: #000000;
+      border-color: #00ff88;
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+    }
+
+    /* Shelf Grid Container */
+    .shelf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Game Card Layout */
+    .game-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      background: #1e1e24;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #2d2d35;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .game-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .game-card h3 {
+      margin: 12px 12px 4px 12px;
+      font-size: 1.1rem;
+    }
+
+    .game-card p {
+      margin: 0 12px 12px 12px;
+      font-size: 0.85rem;
+      color: #a1a1aa;
+    }
+
+    /* Color accents matching your script */
+    .game-card.teal { border-bottom: 4px solid #14b8a6; }
+    .game-card.moss { border-bottom: 4px solid #84cc16; }
+    .game-card.clay { border-bottom: 4px solid #f97316; }
+  </style>
+</head>
+<body>
+
+  <div class="tab-container">
+    <button class="tab-btn active" onclick="filterCategory(event, 'all')">All Ops</button>
+    <button class="tab-btn" onclick="filterCategory(event, 'my-creations')">Self-Made</button>
+    <button class="tab-btn" onclick="filterCategory(event, 'bangers')">GD & FNAF</button>
+    <button class="tab-btn" onclick="filterCategory(event, 'brainrot')">Other Games</button>
+  </div>
+
+  <main id="shelf-container" class="shelf-grid"></main>
+
+  <script>
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Backquote' || e.key === '~') {
+        window.location.href = 'https://docs.google.com';
+      }
+    });
+  </script>
   
 <!-- Cartridge cards are rendered here by script.js -->
 </main>

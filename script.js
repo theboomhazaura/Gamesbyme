@@ -82,13 +82,6 @@ function filterCategory(evt, categoryName) {
   renderShelf(categoryName);
 }
 
-// Panic Key: Instant cloak to Google Docs on ~ or `
-window.addEventListener('keydown', (e) => {
-  if (e.code === 'Backquote' || e.key === '~') {
-    window.location.href = 'https://docs.google.com';
-  }
-});
-
 // HTML escaping helper
 function escapeHtml(str) {
   const div = document.createElement('div');

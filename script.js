@@ -91,17 +91,22 @@ window.addEventListener('keydown', (e) => {
 });
 
 // Global Tab Click Handler (Called by HTML buttons)
-function filterCategory(evt, categoryName) {
-  const buttons = document.getElementsByClassName("tab-btn");
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].classList.remove("active");
+function filterCategory(event, category) {
+  // Update active state on sidebar buttons
+  const buttons = document.querySelectorAll('#layer-categories .sidebar-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  
+  if (event && event.target) {
+    event.target.classList.add('active');
   }
 
-  if (evt && evt.currentTarget) {
-    evt.currentTarget.classList.add("active");
-  }
+  // Render the shelf with the selected tag
+  renderShelf(category);
 
-  renderShelf(categoryName);
+  // Auto-close sidebar on smaller screens after choosing a category
+  if (window.innerWidth < 600) {
+    toggleSidebar();
+  }
 }
 
 // HTML escaping helper

@@ -56,19 +56,6 @@
 </script> 
 
 <style>
-
-<!-- GEOMETRY DASH AUDIO CONTROLLER -->
-<div class="gd-audio-player">
-  <button id="music-btn" class="gd-btn" onclick="toggleGDMusic()">
-    <span id="music-icon">🟡</span> GD Menu Music: OFF
-  </button>
-  
-  <!-- Native Audio Tag -->
-  <audio id="gd-menu" loop preload="auto">
-    <source src="audio/gd-menu.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</div>
   
   /* Tab Navigation Styling */
     .tab-container {
@@ -177,6 +164,24 @@
       }
     });
   </script>
+
+<!-- GEOMETRY DASH AUDIO CONTROLLER -->
+<div class="gd-audio-player" style="text-align: center; margin: 20px 0;">
+  <button id="music-btn" class="tab-btn" onclick="toggleGDMusic()">
+    🟡 GD Menu Music: OFF
+  </button>
+  
+  <audio id="gd-music" loop preload="auto">
+    <source src="audio/gd-menu.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<!-- GAME SHELF CONTAINER -->
+<main id="shelf-container" class="shelf-grid"></main>
+
+<!-- SCRIPTS (MUST BE AT THE VERY BOTTOM OF BODY) -->
+<script src="game.js"></script>
+<script src="script.js"></script>
   
 <!-- Cartridge cards are rendered here by script.js -->
 </main>

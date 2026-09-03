@@ -62,7 +62,7 @@ function toggleGDMusic() {
 // Update Panic Key to cut audio immediately on cloak
 window.addEventListener('keydown', (e) => {
   if (e.code === 'Backquote' || e.key === '~') {
-    const music = document.getElementById("gd-music");
+    const music = document.getElementById("gd-menu");
     if (music) music.pause();
     window.location.href = 'https://docs.google.com';
   }

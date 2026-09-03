@@ -41,6 +41,33 @@ function renderShelf(categoryFilter = "all") {
   });
 }
 
+// Background Music Control
+function toggleMusic() {
+  const music = document.getElementById("bg-music");
+  const btn = document.getElementById("music-btn");
+
+  if (!music) return;
+
+  if (music.paused) {
+    music.play();
+    btn.innerHTML = "🔊 Mute Vibes";
+    btn.classList.add("active");
+  } else {
+    music.pause();
+    btn.innerHTML = "🎵 Play Vibes";
+    btn.classList.remove("active");
+  }
+}
+
+// Emergency Panic Key Update: Pause music instantly when triggered
+window.addEventListener('keydown', (e) => {
+  if (e.code === 'Backquote' || e.key === '~') {
+    const music = document.getElementById("bg-music");
+    if (music) music.pause();
+    window.location.href = 'https://docs.google.com';
+  }
+});
+
 // Global Tab Click Handler (Called by HTML buttons)
 function filterCategory(evt, categoryName) {
   const buttons = document.getElementsByClassName("tab-btn");

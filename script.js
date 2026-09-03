@@ -41,28 +41,28 @@ function renderShelf(categoryFilter = "all") {
   });
 }
 
-// Background Music Control
-function toggleMusic() {
-  const music = document.getElementById("bg-music");
+// Geometry Dash Menu Music Control
+function toggleGDMusic() {
+  const music = document.getElementById("gd-music");
   const btn = document.getElementById("music-btn");
 
   if (!music) return;
 
   if (music.paused) {
     music.play();
-    btn.innerHTML = "🔊 Mute Vibes";
+    btn.innerHTML = "🟢 GD Menu Music: ON";
     btn.classList.add("active");
   } else {
     music.pause();
-    btn.innerHTML = "🎵 Play Vibes";
+    btn.innerHTML = "🟡 GD Menu Music: OFF";
     btn.classList.remove("active");
   }
 }
 
-// Emergency Panic Key Update: Pause music instantly when triggered
+// Update Panic Key to cut audio immediately on cloak
 window.addEventListener('keydown', (e) => {
   if (e.code === 'Backquote' || e.key === '~') {
-    const music = document.getElementById("bg-music");
+    const music = document.getElementById("gd-music");
     if (music) music.pause();
     window.location.href = 'https://docs.google.com';
   }

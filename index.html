@@ -56,7 +56,18 @@
 </script> 
 
 <style>
-    /* Tab Navigation Styling */
+
+<!-- AUDIO TOGGLE BUTTON -->
+<div class="music-container">
+  <button id="music-btn" class="tab-btn" onclick="toggleMusic()">🎵 Play Vibes</button>
+</div>
+
+<!-- AUDIO ELEMENT (Place your audio file in an audio/ folder) -->
+<audio id="bg-music" loop>
+  <source src="audio/menu-theme.mp3" type="audio/mpeg">
+</audio>
+  
+  /* Tab Navigation Styling */
     .tab-container {
       display: flex;
       gap: 12px;

@@ -41,6 +41,40 @@ function renderShelf(categoryFilter = "all") {
   });
 }
 
+/* MAIN CONTENT CONTAINER */
+#main-content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  /* Smooth transition when sidebar slides in */
+  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+/* TABLET & DESKTOP: Shrink shelf when sidebar is open */
+@media (min-width: 600px) {
+  body.sidebar-active #main-content {
+    margin-left: 33.33vw; /* Push content over */
+    width: 66.67vw;       /* Take up remaining 2/3 of screen */
+  }
+}
+
+/* MOBILE: Keep shelf 100% since sidebar overlays fully on mobile */
+@media (max-width: 599px) {
+  body.sidebar-active #main-content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* GAME SHELF GRID */
+.shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
 // Toggle Sidebar Open/Close
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");

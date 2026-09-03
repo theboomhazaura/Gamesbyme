@@ -41,6 +41,28 @@ function renderShelf(categoryFilter = "all") {
   });
 }
 
+// Toggle Sidebar Open/Close
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebar-overlay");
+  
+  sidebar.classList.toggle("open");
+  overlay.classList.toggle("active");
+}
+
+// Switch Sidebar Layers
+function switchLayer(layerId) {
+  // Hide all layers
+  const layers = document.querySelectorAll(".sidebar-layer");
+  layers.forEach(layer => layer.classList.remove("active"));
+
+  // Show selected layer
+  const targetLayer = document.getElementById(layerId);
+  if (targetLayer) {
+    targetLayer.classList.add("active");
+  }
+}
+
 // Geometry Dash Menu Music Control
 function toggleGDMusic() {
   const music = document.getElementById("gd-music");

@@ -55,6 +55,75 @@
   }
 </script> 
 
+<!-- SIDEBAR TOGGLE BUTTON (Floating in top-left corner) -->
+<button id="sidebar-toggle" onclick="toggleSidebar()" title="Tralalao Tralala Menu">
+  ☰ Menu
+</button>
+
+<!-- OVERLAY (Dims background when sidebar opens) -->
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- MAIN SIDEBAR -->
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h2>Unblocktorium</h2>
+    <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+  </div>
+
+  <!-- LAYER 1: MAIN NAVIGATION & CONTROLS -->
+  <div id="layer-main" class="sidebar-layer active">
+    <h3>Quick Access</h3>
+    
+    <!-- GD Music Control -->
+    <div class="control-group">
+      <button id="music-btn" class="sidebar-btn" onclick="toggleGDMusic()">
+        🟡 GD Menu Music: OFF
+      </button>
+      <audio id="gd-music" loop preload="auto">
+        <source src="audio/gd-menu.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <!-- Navigation to Sub-Layers -->
+    <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-categories')">
+      🎮 Game Categories &rarr;
+    </button>
+    <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-stealth')">
+      🛡️ Stealth & Panic Settings &rarr;
+    </button>
+    <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-stats')">
+      ⚡ Aura & Brainrot Stats &rarr;
+    </button>
+  </div>
+
+  <!-- LAYER 2: GAME CATEGORIES -->
+  <div id="layer-categories" class="sidebar-layer">
+    <button class="back-btn" onclick="switchLayer('layer-main')">&larr; Back</button>
+    <h3>Categories</h3>
+    <button class="sidebar-btn" onclick="filterCategory(event, 'all')">All Games</button>
+    <button class="sidebar-btn" onclick="filterCategory(event, 'GAMESBYME')">Self-Made</button>
+    <button class="sidebar-btn" onclick="filterCategory(event, 'Horror')">Horror</button>
+    <button class="sidebar-btn" onclick="filterCategory(event, 'platformer')">Platformers</button>
+  </div>
+
+  <!-- LAYER 3: STEALTH SETTINGS -->
+  <div id="layer-stealth" class="sidebar-layer">
+    <button class="back-btn" onclick="switchLayer('layer-main')">&larr; Back</button>
+    <h3>Stealth Controls</h3>
+    <p class="layer-desc">Panic Key: <kbd>~</kbd> (Backquote)</p>
+    <p class="layer-desc">Redirects instantly to Google Docs and kills menu audio.</p>
+  </div>
+
+  <!-- LAYER 4: BRAINROT STATS -->
+  <div id="layer-stats" class="sidebar-layer">
+    <button class="back-btn" onclick="switchLayer('layer-main')">&larr; Back</button>
+    <h3>Aura Tracker</h3>
+    <div class="stat-badge">⚡ Aura: +999,999</div>
+    <div class="stat-badge">🇮🇹 Status: Tung Tung Tung Sahur</div>
+    <div class="stat-badge">☕ Vibe: Cappuccino Ballerina</div>
+  </div>
+</aside>
+  
 <style>
   
   /* Tab Navigation Styling */

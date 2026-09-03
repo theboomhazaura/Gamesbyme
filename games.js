@@ -70,6 +70,16 @@ const GAMES = [
   image: "images/IMG_2500.jpeg", // optional — "clay" | "moss" | "teal"
   category: "platformer"
 },
+
+{ 
+  title: "Drive mad",
+  slug: "drivemad",
+  description: "drive a car on crazy obsticles",
+  color: "moss",
+  image: "images/IMG_2503.jpeg", // optional — "clay" | "moss" | "teal"
+  category: "Car"
+},
+  
   
 {
   title: "challenge rush",

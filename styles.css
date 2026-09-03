@@ -37,6 +37,30 @@ code {
   font-size: 0.9em;
 }
 
+/* Prevent horizontal overflow and force perfect box sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden; /* Stops horizontal side scrolling completely */
+  min-height: 100vh;
+}
+
+/* Ensure your game shelf grid stays strictly inside the screen */
+.shelf-grid, #shelf-container {
+  width: 100%;
+  max-width: 1200px; /* Limits max width on wide monitors */
+  margin: 0 auto;    /* Centers the shelf horizontally */
+  padding: 20px;
+}
+
+
+
 /* ---------- Hero ---------- */
 
 .hero {

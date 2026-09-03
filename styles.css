@@ -52,7 +52,7 @@ html, body {
 }
 
 /* Ensure your game shelf grid stays strictly inside the screen */
-.shelf-grid, #shelf-container {
+.shelf, #shelf-container {
   width: 100%;
   max-width: 1200px; /* Limits max width on wide monitors */
   margin: 0 auto;    /* Centers the shelf horizontally */
@@ -102,8 +102,9 @@ html, body {
   margin: 0 auto;
   padding: 3rem 1.5rem 4rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
 }
 
 /* ---------- Cartridge card ---------- */

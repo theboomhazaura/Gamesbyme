@@ -44,6 +44,15 @@ const GAMES = [
 },
 
 { 
+  title: "Run 3",
+  slug: "run3",
+  description: "jump through a long tunnel",
+  color: "moss",
+  image: "images/IMG_2502.jpeg", // optional — "clay" | "moss" | "teal"
+  category: "platformer"
+},
+  
+{ 
   title: "five nights at freddys 1",
   slug: "fnaf1",
   description: "survive 5 nights at freddys",

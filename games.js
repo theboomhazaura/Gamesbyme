@@ -91,5 +91,15 @@ const GAMES = [
   category: "platformer"
 
 },
+
+// FORCE SHELF TO LOAD ON INITIAL PAGE LOAD
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof renderShelf === "function") {
+    renderShelf("all");
+  } else if (typeof displayGames === "function") {
+    displayGames();
+  }
+});
+  
   
 ];

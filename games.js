@@ -77,7 +77,7 @@ const GAMES = [
   description: "drive a car on crazy obsticles",
   color: "moss",
   image: "images/IMG_2503.jpeg", // optional — "clay" | "moss" | "teal"
-  category: "Car"
+  category: "Driving"
 },
   
   

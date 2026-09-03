@@ -158,6 +158,36 @@ code {
 .cartridge--teal .cartridge-notch { background: var(--teal); }
 .cartridge--teal .cartridge-label { background: var(--teal); }
 
+.gd-audio-player {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.gd-btn {
+  background-color: #222;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.gd-btn:hover {
+  background-color: #00ff88;
+  color: #000;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+.gd-btn.active {
+  background-color: #00ff88;
+  color: #000;
+}
+
 
 /* ---------- Footer ---------- */
 

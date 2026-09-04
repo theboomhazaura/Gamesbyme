@@ -64,6 +64,24 @@
     .game-card.teal { border-bottom: 4px solid #14b8a6; }
     .game-card.moss { border-bottom: 4px solid #84cc16; }
     .game-card.clay { border-bottom: 4px solid #f97316; }
+
+    /* Logo Layout Adjustments */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .site-logo {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      transition: opacity 0.3s ease;
+    }
+
+    .site-logo.hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -96,19 +114,18 @@
         </audio>
       </div>
 
+      <div class="control-group">
+        <button id="theme-btn" class="sidebar-btn" onclick="toggleTheme()">
+          🌙 Theme: Dark Mode
+        </button>
+      </div>
+
       <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-categories')">
         🎮 Game Categories &rarr;
       </button>
       <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-stealth')">
         🛡️ Stealth & Panic Settings &rarr;
       </button>
-
-      <!-- INSIDE #layer-main IN INDEX.HTML -->
-<div class="control-group">
-  <button id="theme-btn" class="sidebar-btn" onclick="toggleTheme()">
-    🌙 Theme: Dark Mode
-  </button>
-</div>
       <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-stats')">
         ⚡ Aura & Brainrot Stats &rarr;
       </button>
@@ -151,7 +168,14 @@
     <header class="hero">
       <div class="hero-inner">
         <p class="hero-eyebrow">don't get caught</p>
-        <h1 class="hero-title">UNBLOCKTORIUM</h1>
+
+        <!-- DYNAMIC THEME LOGO CONTAINER -->
+        <div class="logo-container">
+          <img id="logo-dark" src="images/logo-dark.png" alt="Unblocktorium Logo" class="site-logo">
+          <img id="logo-light" src="images/logo-light.png" alt="Unblocktorium Logo" class="site-logo hidden">
+          <h1 class="hero-title">UNBLOCKTORIUM</h1>
+        </div>
+
         <p class="hero-sub">Pick a cartridge, hit play.</p>
       </div>
     </header>

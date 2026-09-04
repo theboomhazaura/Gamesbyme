@@ -50,6 +50,63 @@ function toggleSidebar() {
   document.body.classList.toggle("sidebar-active");
 }
 
+// PREDEFINED CLOAK PROFILES
+const CLOAK_PROFILES = {
+  drive: {
+    title: "My Drive - Google Drive",
+    icon: "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"
+  },
+  docs: {
+    title: "Google Docs",
+    icon: "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
+  },
+  canvas: {
+    title: "Dashboard",
+    icon: "https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico"
+  },
+  desmos: {
+    title: "Desmos | Graphing Calculator",
+    icon: "https://www.desmos.com/favicon.ico"
+  }
+};
+
+// APPLY TAB CLOAK PROFILE
+function setTabCloak(profileKey) {
+  const profile = CLOAK_PROFILES[profileKey];
+  if (!profile) return;
+
+  document.title = profile.title;
+  
+  let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = profile.icon;
+  document.getElementsByTagName('head')[0].appendChild(link);
+
+  localStorage.setItem('unblocktorium_cloak', profileKey);
+}
+
+// RESET BACK TO ORIGINAL BRANDING
+function resetTabCloak() {
+  document.title = "Unblocktorium | Unblocked Games";
+  
+  let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+  link.type = 'image/png';
+  link.rel = 'icon';
+  link.href = 'images/Favicon.png';
+  document.getElementsByTagName('head')[0].appendChild(link);
+
+  localStorage.removeItem('unblocktorium_cloak');
+}
+
+// RESTORE SAVED CLOAK PREFERENCE ON LOAD
+document.addEventListener("DOMContentLoaded", () => {
+  const savedCloak = localStorage.getItem('unblocktorium_cloak');
+  if (savedCloak && CLOAK_PROFILES[savedCloak]) {
+    setTabCloak(savedCloak);
+  }
+});
+
 // Switch Sidebar Layers
 function switchLayer(layerId) {
   const layers = document.querySelectorAll(".sidebar-layer");

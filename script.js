@@ -26,7 +26,6 @@ function renderShelf(categoryFilter = "all") {
     card.className = `cartridge cartridge--${color} game-card ${color}`;
     card.href = href;
 
-    // Retains your retro cartridge HTML layout with safety escaping
     card.innerHTML = `
       <div class="cartridge-notch"></div>
       <div class="cartridge-label">
@@ -41,56 +40,21 @@ function renderShelf(categoryFilter = "all") {
   });
 }
 
-/* MAIN CONTENT CONTAINER */
-#main-content {
-  width: 100%;
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  /* Smooth transition when sidebar slides in */
-  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
-}
-
-/* TABLET & DESKTOP: Shrink shelf when sidebar is open */
-@media (min-width: 600px) {
-  body.sidebar-active #main-content {
-    margin-left: 33.33vw; /* Push content over */
-    width: 66.67vw;       /* Take up remaining 2/3 of screen */
-  }
-}
-
-/* MOBILE: Keep shelf 100% since sidebar overlays fully on mobile */
-@media (max-width: 599px) {
-  body.sidebar-active #main-content {
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
-/* GAME SHELF GRID */
-.shelf-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-  width: 100%;
-}
-
-// Toggle Sidebar Open/Close
+// Toggle Sidebar Open/Close & Adjust Main Content Width
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("sidebar-overlay");
   
   sidebar.classList.toggle("open");
   overlay.classList.toggle("active");
+  document.body.classList.toggle("sidebar-active"); // Adjusts 100% to 66% width
 }
 
 // Switch Sidebar Layers
 function switchLayer(layerId) {
-  // Hide all layers
   const layers = document.querySelectorAll(".sidebar-layer");
   layers.forEach(layer => layer.classList.remove("active"));
 
-  // Show selected layer
   const targetLayer = document.getElementById(layerId);
   if (targetLayer) {
     targetLayer.classList.add("active");
@@ -118,15 +82,14 @@ function toggleGDMusic() {
 // Update Panic Key to cut audio immediately on cloak
 window.addEventListener('keydown', (e) => {
   if (e.code === 'Backquote' || e.key === '~') {
-    const music = document.getElementById("gd-menu");
+    const music = document.getElementById("gd-music");
     if (music) music.pause();
     window.location.href = 'https://docs.google.com';
   }
 });
 
-// Global Tab Click Handler (Called by HTML buttons)
+// Global Tab Click Handler
 function filterCategory(event, category) {
-  // Update active state on sidebar buttons
   const buttons = document.querySelectorAll('#layer-categories .sidebar-btn');
   buttons.forEach(btn => btn.classList.remove('active'));
   
@@ -134,10 +97,8 @@ function filterCategory(event, category) {
     event.target.classList.add('active');
   }
 
-  // Render the shelf with the selected tag
   renderShelf(category);
 
-  // Auto-close sidebar on smaller screens after choosing a category
   if (window.innerWidth < 600) {
     toggleSidebar();
   }
@@ -154,3 +115,4 @@ function escapeHtml(str) {
 window.addEventListener("DOMContentLoaded", () => {
   renderShelf("all");
 });
+

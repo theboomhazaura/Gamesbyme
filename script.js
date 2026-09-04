@@ -111,6 +111,34 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// TOGGLE DARK / LIGHT THEME
+function toggleTheme() {
+  const body = document.body;
+  const themeBtn = document.getElementById("theme-btn");
+
+  body.classList.toggle("light-theme");
+  const isLight = body.classList.contains("light-theme");
+
+  // Save preference
+  localStorage.setItem("unblocktorium_theme", isLight ? "light" : "dark");
+
+  // Update button text
+  if (themeBtn) {
+    themeBtn.innerHTML = isLight ? "☀️ Theme: Light Mode" : "🌙 Theme: Dark Mode";
+  }
+}
+
+// LOAD SAVED THEME ON PAGE LOAD
+document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("unblocktorium_theme");
+  const themeBtn = document.getElementById("theme-btn");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+    if (themeBtn) themeBtn.innerHTML = "☀️ Theme: Light Mode";
+  }
+});
+
 // Render initial view when DOM loads
 window.addEventListener("DOMContentLoaded", () => {
   renderShelf("all");

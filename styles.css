@@ -409,6 +409,26 @@ html, body {
   width: 100%;
 }
 
+/* LOGO HEADER LAYOUT */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.site-logo {
+  height: 50px; /* Adjust height to match your preferred scale */
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide helper class */
+.site-logo.hidden {
+  display: none;
+}
+
+
 
 /* ---------- Footer ---------- */
 

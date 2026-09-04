@@ -69,15 +69,7 @@ const GAMES = [
     color: "moss",
     image: "images/IMG_2503.jpeg",
     category: "Driving"
-  },
-  { 
-    title: "solar simulation",
-    slug: "solarsim",
-    description: "launch into planets",
-    color: "clay",
-    category: "GAMESBYME"
-  },
-  
+  },  
   {
     title: "challenge rush",
     slug: "challengerush",

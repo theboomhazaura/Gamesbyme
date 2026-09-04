@@ -1,90 +1,8 @@
-// PREDEFINED CLOAK PROFILES
-const CLOAK_PROFILES = {
-  drive: {
-    title: "My Drive - Google Drive",
-    icon: "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"
-  },
-  docs: {
-    title: "Google Docs",
-    icon: "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
-  },
-  canvas: {
-    title: "Dashboard",
-    icon: "https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico"
-  },
-  desmos: {
-    title: "Desmos | Graphing Calculator",
-    icon: "https://www.desmos.com/favicon.ico"
-  }
-};
-
-// AUTO-APPLY SAVED CLOAK ON ANY PAGE LOAD
-(function applySavedCloak() {
-  const savedCloak = localStorage.getItem('unblocktorium_cloak');
-  if (savedCloak && CLOAK_PROFILES[savedCloak]) {
-    const profile = CLOAK_PROFILES[savedCloak];
-    document.title = profile.title;
-    
-    let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-    link.type = 'image/x-icon';
-    link.rel = 'shortcut icon';
-    link.href = profile.icon;
-    document.getElementsByTagName('head')[0].appendChild(link);
-  }
-})();
-
-
-// Dynamic Game Shelf Renderer (Global for HTML onclick access)
-function renderShelf(categoryFilter = "all") {
-  const shelfContainer = document.getElementById("shelf-container");
-  if (!shelfContainer) return;
-
-  // Clear current games displayed
-  shelfContainer.innerHTML = "";
-
-  const gamesList = typeof GAMES !== 'undefined' ? GAMES : [];
-
-  // Filter games based on active tab category
-  const filteredGames = gamesList.filter(game => {
-    if (categoryFilter === "all") return true;
-    return game.category === categoryFilter;
-  });
-
-  const colors = ['clay', 'moss', 'teal'];
-
-  filteredGames.forEach((game, i) => {
-    const color = game.color || colors[i % colors.length];
-    const href = game.embedUrl
-      ? `play.html?src=${encodeURIComponent(game.embedUrl)}`
-      : `games/${game.slug}/index.html`;
-
-    const card = document.createElement('a');
-    card.className = `cartridge cartridge--${color} game-card ${color}`;
-    card.href = href;
-
-    card.innerHTML = `
-      <div class="cartridge-notch"></div>
-      <div class="cartridge-label">
-        ${game.image ? `<img src="${game.image}" alt="${escapeHtml(game.title)}" class="cartridge-image">` : ''}
-        <h2 class="cartridge-title">${escapeHtml(game.title)}</h2>
-        <p class="cartridge-desc">${escapeHtml(game.description || '')}</p>
-      </div>
-      <span class="cartridge-play">Play &rarr;</span>
-    `;
-
-    shelfContainer.appendChild(card);
-  });
-}
-
-// Toggle Sidebar Open/Close & Adjust Main Content Width
-function toggleSidebar() {
-  const sidebar = document.getElementById("sidebar");
-  const overlay = document.getElementById("sidebar-overlay");
-  
-  sidebar.classList.toggle("open");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("sidebar-active");
-}
+// ==========================================
+// 1. GLOBAL STATE & CONSTANTS
+// ==========================================
+let currentCategory = "all";
+let searchQuery = "";
 
 // PREDEFINED CLOAK PROFILES
 const CLOAK_PROFILES = {
@@ -106,7 +24,18 @@ const CLOAK_PROFILES = {
   }
 };
 
-// APPLY TAB CLOAK PROFILE
+// ==========================================
+// 2. HELPER FUNCTIONS
+// ==========================================
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// ==========================================
+// 3. TAB CLOAKING SYSTEM
+// ==========================================
 function setTabCloak(profileKey) {
   const profile = CLOAK_PROFILES[profileKey];
   if (!profile) return;
@@ -122,7 +51,6 @@ function setTabCloak(profileKey) {
   localStorage.setItem('unblocktorium_cloak', profileKey);
 }
 
-// RESET BACK TO ORIGINAL BRANDING
 function resetTabCloak() {
   document.title = "Unblocktorium | Unblocked Games";
   
@@ -135,35 +63,29 @@ function resetTabCloak() {
   localStorage.removeItem('unblocktorium_cloak');
 }
 
-// RESTORE SAVED CLOAK PREFERENCE ON LOAD
-document.addEventListener("DOMContentLoaded", () => {
-  const savedCloak = localStorage.getItem('unblocktorium_cloak');
-  if (savedCloak && CLOAK_PROFILES[savedCloak]) {
-    setTabCloak(savedCloak);
-  }
-});
-
-// Switch Sidebar Layers
-function switchLayer(layerId) {
-  const layers = document.querySelectorAll(".sidebar-layer");
-  layers.forEach(layer => layer.classList.remove("active"));
-
-  const targetLayer = document.getElementById(layerId);
-  if (targetLayer) {
-    targetLayer.classList.add("active");
-  }
-}
-
-let currentCategory = "all";
-let searchQuery = "";
-
-// REAL-TIME SEARCH INPUT HANDLER
+// ==========================================
+// 4. GAME SHELF RENDERER (DUAL-FILTERING)
+// ==========================================
 function handleSearch(event) {
   searchQuery = event.target.value.toLowerCase().trim();
   renderShelf(currentCategory);
 }
 
-// UPDATED RENDERER WITH DUAL-FILTERING
+function filterCategory(event, category) {
+  const buttons = document.querySelectorAll('#layer-categories .sidebar-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  
+  if (event && event.target) {
+    event.target.classList.add('active');
+  }
+
+  renderShelf(category);
+
+  if (window.innerWidth < 600) {
+    toggleSidebar();
+  }
+}
+
 function renderShelf(categoryFilter = "all") {
   currentCategory = categoryFilter;
   const shelfContainer = document.getElementById("shelf-container");
@@ -172,7 +94,7 @@ function renderShelf(categoryFilter = "all") {
   shelfContainer.innerHTML = "";
   const gamesList = typeof GAMES !== 'undefined' ? GAMES : [];
 
-  // FILTER BY CATEGORY AND SEARCH QUERY
+  // Dual filtering by category and search term
   const filteredGames = gamesList.filter(game => {
     const matchesCategory = (categoryFilter === "all") || (game.category === categoryFilter);
     const matchesSearch = game.title.toLowerCase().includes(searchQuery) || 
@@ -211,8 +133,28 @@ function renderShelf(categoryFilter = "all") {
   });
 }
 
+// ==========================================
+// 5. UI CONTROLS & THEME TOGGLE
+// ==========================================
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebar-overlay");
+  
+  if (sidebar) sidebar.classList.toggle("open");
+  if (overlay) overlay.classList.toggle("active");
+  document.body.classList.toggle("sidebar-active");
+}
 
-// Geometry Dash Menu Music Control
+function switchLayer(layerId) {
+  const layers = document.querySelectorAll(".sidebar-layer");
+  layers.forEach(layer => layer.classList.remove("active"));
+
+  const targetLayer = document.getElementById(layerId);
+  if (targetLayer) {
+    targetLayer.classList.add("active");
+  }
+}
+
 function toggleGDMusic() {
   const music = document.getElementById("gd-music");
   const btn = document.getElementById("music-btn");
@@ -230,39 +172,6 @@ function toggleGDMusic() {
   }
 }
 
-// Update Panic Key to cut audio immediately on cloak
-window.addEventListener('keydown', (e) => {
-  if (e.code === 'Backquote' || e.key === '~') {
-    const music = document.getElementById("gd-music");
-    if (music) music.pause();
-    window.location.href = 'https://docs.google.com';
-  }
-});
-
-// Global Tab Click Handler
-function filterCategory(event, category) {
-  const buttons = document.querySelectorAll('#layer-categories .sidebar-btn');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  
-  if (event && event.target) {
-    event.target.classList.add('active');
-  }
-
-  renderShelf(category);
-
-  if (window.innerWidth < 600) {
-    toggleSidebar();
-  }
-}
-
-// HTML escaping helper
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}
-
-// TOGGLE DARK / LIGHT THEME WITH DYNAMIC LOGO
 function toggleTheme() {
   const body = document.body;
   const themeBtn = document.getElementById("theme-btn");
@@ -272,23 +181,38 @@ function toggleTheme() {
   body.classList.toggle("light-theme");
   const isLight = body.classList.contains("light-theme");
 
-  // Save preference
   localStorage.setItem("unblocktorium_theme", isLight ? "light" : "dark");
 
-  // Toggle Logos
   if (logoDark && logoLight) {
     logoDark.classList.toggle("hidden", isLight);
     logoLight.classList.toggle("hidden", !isLight);
   }
 
-  // Update button text
   if (themeBtn) {
     themeBtn.innerHTML = isLight ? "☀️ Theme: Light Mode" : "🌙 Theme: Dark Mode";
   }
 }
 
-// RESTORE SAVED THEME AND LOGO ON LOAD
+// Global Panic Key Switch
+window.addEventListener('keydown', (e) => {
+  if (e.code === 'Backquote' || e.key === '~') {
+    const music = document.getElementById("gd-music");
+    if (music) music.pause();
+    window.location.href = 'https://docs.google.com';
+  }
+});
+
+// ==========================================
+// 6. SINGLE INITIALIZATION ON LOAD
+// ==========================================
 document.addEventListener("DOMContentLoaded", () => {
+  // Restore Cloak Profile
+  const savedCloak = localStorage.getItem('unblocktorium_cloak');
+  if (savedCloak && CLOAK_PROFILES[savedCloak]) {
+    setTabCloak(savedCloak);
+  }
+
+  // Restore Theme
   const savedTheme = localStorage.getItem("unblocktorium_theme");
   const themeBtn = document.getElementById("theme-btn");
   const logoDark = document.getElementById("logo-dark");
@@ -302,9 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
       logoLight.classList.remove("hidden");
     }
   }
-});
 
-// Render initial view when DOM loads
-window.addEventListener("DOMContentLoaded", () => {
+  // Initial Shelf Render
   renderShelf("all");
 });

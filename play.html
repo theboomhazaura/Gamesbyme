@@ -22,5 +22,16 @@
       document.getElementById('frame').src = src;
     }
   </script>
+
+ <script>
+  // GLOBAL INSTANT PANIC SWITCH
+  window.addEventListener('keydown', (e) => {
+    if (e.code === 'Backquote' || e.key === '~') {
+      window.location.href = 'https://docs.google.com';
+    }
+  });
+</script> 
+
+
 </body>
 </html>

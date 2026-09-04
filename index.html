@@ -134,9 +134,24 @@
       <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-categories')">
         🎮 Game Categories &rarr;
       </button>
-      <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-stealth')">
-        🛡️ Stealth & Panic Settings &rarr;
-      </button>
+<!-- LAYER 3: STEALTH SETTINGS -->
+<div id="layer-stealth" class="sidebar-layer">
+  <button class="back-btn" onclick="switchLayer('layer-main')">&larr; Back</button>
+  <h3>Stealth Controls</h3>
+  <p class="layer-desc">Panic Key: <kbd>~</kbd> (Backquote)</p>
+  <p class="layer-desc">Redirects instantly to Google Docs and kills menu audio.</p>
+
+  <hr style="border: 0; border-top: 1px solid var(--border); margin: 15px 0;">
+
+  <h3>Tab Cloaking Profile</h3>
+  <div class="cloak-options" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+    <button class="sidebar-btn" onclick="setTabCloak('drive')">📁 Google Drive</button>
+    <button class="sidebar-btn" onclick="setTabCloak('docs')">📄 Google Docs</button>
+    <button class="sidebar-btn" onclick="setTabCloak('canvas')">🎓 Canvas LMS</button>
+    <button class="sidebar-btn" onclick="setTabCloak('desmos')">📊 Desmos Calculator</button>
+    <button class="sidebar-btn" onclick="resetTabCloak()">🔄 Reset (Unblocktorium)</button>
+  </div>
+</div>
       <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-stats')">
         ⚡ Aura & Brainrot Stats &rarr;
       </button>

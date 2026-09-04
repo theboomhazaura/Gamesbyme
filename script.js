@@ -111,10 +111,12 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-// TOGGLE DARK / LIGHT THEME
+// TOGGLE DARK / LIGHT THEME WITH DYNAMIC LOGO
 function toggleTheme() {
   const body = document.body;
   const themeBtn = document.getElementById("theme-btn");
+  const logoDark = document.getElementById("logo-dark");
+  const logoLight = document.getElementById("logo-light");
 
   body.classList.toggle("light-theme");
   const isLight = body.classList.contains("light-theme");
@@ -122,20 +124,32 @@ function toggleTheme() {
   // Save preference
   localStorage.setItem("unblocktorium_theme", isLight ? "light" : "dark");
 
+  // Toggle Logos
+  if (logoDark && logoLight) {
+    logoDark.classList.toggle("hidden", isLight);
+    logoLight.classList.toggle("hidden", !isLight);
+  }
+
   // Update button text
   if (themeBtn) {
     themeBtn.innerHTML = isLight ? "☀️ Theme: Light Mode" : "🌙 Theme: Dark Mode";
   }
 }
 
-// LOAD SAVED THEME ON PAGE LOAD
+// RESTORE SAVED THEME AND LOGO ON LOAD
 document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("unblocktorium_theme");
   const themeBtn = document.getElementById("theme-btn");
+  const logoDark = document.getElementById("logo-dark");
+  const logoLight = document.getElementById("logo-light");
 
   if (savedTheme === "light") {
     document.body.classList.add("light-theme");
     if (themeBtn) themeBtn.innerHTML = "☀️ Theme: Light Mode";
+    if (logoDark && logoLight) {
+      logoDark.classList.add("hidden");
+      logoLight.classList.remove("hidden");
+    }
   }
 });
 

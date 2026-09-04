@@ -47,7 +47,7 @@ function toggleSidebar() {
   
   sidebar.classList.toggle("open");
   overlay.classList.toggle("active");
-  document.body.classList.toggle("sidebar-active"); // Adjusts 100% to 66% width
+  document.body.classList.toggle("sidebar-active");
 }
 
 // Switch Sidebar Layers
@@ -115,4 +115,3 @@ function escapeHtml(str) {
 window.addEventListener("DOMContentLoaded", () => {
   renderShelf("all");
 });
-

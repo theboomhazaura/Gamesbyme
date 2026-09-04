@@ -70,6 +70,14 @@ const GAMES = [
     image: "images/IMG_2503.jpeg",
     category: "Driving"
   },  
+  { 
+    title: "tiny fishing",
+    slug: "tinyfishing",
+    description: "reel in the biggest catch",
+    color: "teal",
+    image: "images/IMG_2512.jpeg",
+    category: "idle"
+  },  
   {
     title: "challenge rush",
     slug: "challengerush",

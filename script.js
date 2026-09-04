@@ -61,6 +61,64 @@ function switchLayer(layerId) {
   }
 }
 
+let currentCategory = "all";
+let searchQuery = "";
+
+// REAL-TIME SEARCH INPUT HANDLER
+function handleSearch(event) {
+  searchQuery = event.target.value.toLowerCase().trim();
+  renderShelf(currentCategory);
+}
+
+// UPDATED RENDERER WITH DUAL-FILTERING
+function renderShelf(categoryFilter = "all") {
+  currentCategory = categoryFilter;
+  const shelfContainer = document.getElementById("shelf-container");
+  if (!shelfContainer) return;
+
+  shelfContainer.innerHTML = "";
+  const gamesList = typeof GAMES !== 'undefined' ? GAMES : [];
+
+  // FILTER BY CATEGORY AND SEARCH QUERY
+  const filteredGames = gamesList.filter(game => {
+    const matchesCategory = (categoryFilter === "all") || (game.category === categoryFilter);
+    const matchesSearch = game.title.toLowerCase().includes(searchQuery) || 
+                          (game.description && game.description.toLowerCase().includes(searchQuery));
+    return matchesCategory && matchesSearch;
+  });
+
+  const colors = ['clay', 'moss', 'teal'];
+
+  if (filteredGames.length === 0) {
+    shelfContainer.innerHTML = `<p style="color: var(--text-dim); text-align: center; grid-column: 1/-1;">No games found...</p>`;
+    return;
+  }
+
+  filteredGames.forEach((game, i) => {
+    const color = game.color || colors[i % colors.length];
+    const href = game.embedUrl
+      ? `play.html?src=${encodeURIComponent(game.embedUrl)}`
+      : `games/${game.slug}/index.html`;
+
+    const card = document.createElement('a');
+    card.className = `cartridge cartridge--${color} game-card ${color}`;
+    card.href = href;
+
+    card.innerHTML = `
+      <div class="cartridge-notch"></div>
+      <div class="cartridge-label">
+        ${game.image ? `<img src="${game.image}" alt="${escapeHtml(game.title)}" class="cartridge-image">` : ''}
+        <h2 class="cartridge-title">${escapeHtml(game.title)}</h2>
+        <p class="cartridge-desc">${escapeHtml(game.description || '')}</p>
+      </div>
+      <span class="cartridge-play">Play &rarr;</span>
+    `;
+
+    shelfContainer.appendChild(card);
+  });
+}
+
+
 // Geometry Dash Menu Music Control
 function toggleGDMusic() {
   const music = document.getElementById("gd-music");

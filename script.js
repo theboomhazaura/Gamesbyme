@@ -1,3 +1,39 @@
+// PREDEFINED CLOAK PROFILES
+const CLOAK_PROFILES = {
+  drive: {
+    title: "My Drive - Google Drive",
+    icon: "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"
+  },
+  docs: {
+    title: "Google Docs",
+    icon: "https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"
+  },
+  canvas: {
+    title: "Dashboard",
+    icon: "https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico"
+  },
+  desmos: {
+    title: "Desmos | Graphing Calculator",
+    icon: "https://www.desmos.com/favicon.ico"
+  }
+};
+
+// AUTO-APPLY SAVED CLOAK ON ANY PAGE LOAD
+(function applySavedCloak() {
+  const savedCloak = localStorage.getItem('unblocktorium_cloak');
+  if (savedCloak && CLOAK_PROFILES[savedCloak]) {
+    const profile = CLOAK_PROFILES[savedCloak];
+    document.title = profile.title;
+    
+    let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = profile.icon;
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+})();
+
+
 // Dynamic Game Shelf Renderer (Global for HTML onclick access)
 function renderShelf(categoryFilter = "all") {
   const shelfContainer = document.getElementById("shelf-container");

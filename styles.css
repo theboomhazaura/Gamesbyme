@@ -37,26 +37,27 @@ code {
   font-size: 0.9em;
 }
 
-/* ROOT COLOR VARIABLES (DEFAULT DARK) */
+CSS
+/* ROOT COLOR VARIABLES (DEFAULT DARK MODE: PURE BLACK) */
 :root {
-  --bg: #211a2e;
-  --bg-raised: #2b2240;
-  --text: #efe8da;
-  --text-dim: #b8afc7;
-  --border: rgba(255, 255, 255, 0.08);
-  --card-bg: #1e1e24;
-  --card-border: #2d2d35;
+  --bg: #000000;              /* Pitch Black */
+  --bg-raised: #121212;       /* Deep Charcoal for cards/headers */
+  --text: #ffffff;            /* Pure White Text */
+  --text-dim: #a1a1aa;        /* Muted Gray */
+  --border: rgba(255, 255, 255, 0.12);
+  --card-bg: #0d0d0d;         /* Ultra Dark Card Background */
+  --card-border: #27272a;     /* Sharp Dark Border */
 }
 
-/* LIGHT THEME OVERRIDES */
+/* LIGHT MODE OVERRIDES (PURE WHITE) */
 body.light-theme {
-  --bg: #f4f4f6;
-  --bg-raised: #ffffff;
-  --text: #18181b;
-  --text-dim: #52525b;
+  --bg: #ffffff;              /* Pure White */
+  --bg-raised: #f4f4f5;       /* Soft Light Gray for headers */
+  --text: #09090b;            /* Near Black Text for readability */
+  --text-dim: #71717a;        /* Muted Dark Gray */
   --border: rgba(0, 0, 0, 0.1);
-  --card-bg: #ffffff;
-  --card-border: #e4e4e7;
+  --card-bg: #fdfdfd;         /* Crisp White Card */
+  --card-border: #e4e4e7;     /* Light Gray Border */
 }
 
 /* APPLY VARIABLE COLORS TO MAIN LAYOUT */

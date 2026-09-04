@@ -37,6 +37,49 @@ code {
   font-size: 0.9em;
 }
 
+/* ROOT COLOR VARIABLES (DEFAULT DARK) */
+:root {
+  --bg: #211a2e;
+  --bg-raised: #2b2240;
+  --text: #efe8da;
+  --text-dim: #b8afc7;
+  --border: rgba(255, 255, 255, 0.08);
+  --card-bg: #1e1e24;
+  --card-border: #2d2d35;
+}
+
+/* LIGHT THEME OVERRIDES */
+body.light-theme {
+  --bg: #f4f4f6;
+  --bg-raised: #ffffff;
+  --text: #18181b;
+  --text-dim: #52525b;
+  --border: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+  --card-border: #e4e4e7;
+}
+
+/* APPLY VARIABLE COLORS TO MAIN LAYOUT */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#main-content {
+  background: var(--bg);
+}
+
+.hero {
+  border-bottom: 1px solid var(--border);
+}
+
+.game-card, .cartridge {
+  background: var(--card-bg);
+  border-color: var(--card-border);
+}
+
+
 /* Prevent horizontal overflow and force perfect box sizing */
 *, *::before, *::after {
   box-sizing: border-box;

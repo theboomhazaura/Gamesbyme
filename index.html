@@ -103,17 +103,18 @@
 
     <!-- LAYER 1: MAIN NAVIGATION -->
     <div id="layer-main" class="sidebar-layer active">
-    
-     <!-- TOP OF LAYER 1 SEARCH BAR -->
-  <div class="control-group" style="margin-bottom: 15px;">
-    <input 
-      type="text" 
-      id="game-search" 
-      placeholder="🔍 Search cartridges..." 
-      oninput="handleSearch(event)"
-      style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border); background: #18181b; color: #fff; font-family: inherit; outline: none;"
-    />
-  </div>     
+      
+      <!-- TOP OF LAYER 1 SEARCH BAR -->
+      <div class="control-group" style="margin-bottom: 15px;">
+        <input 
+          type="text" 
+          id="game-search" 
+          placeholder="🔍 Search cartridges..." 
+          oninput="handleSearch(event)"
+          style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border); background: #18181b; color: #fff; font-family: inherit; outline: none;"
+        />
+      </div>    
+      
       <h3>Quick Access</h3>
       
       <div class="control-group">
@@ -134,24 +135,9 @@
       <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-categories')">
         🎮 Game Categories &rarr;
       </button>
-<!-- LAYER 3: STEALTH SETTINGS -->
-<div id="layer-stealth" class="sidebar-layer">
-  <button class="back-btn" onclick="switchLayer('layer-main')">&larr; Back</button>
-  <h3>Stealth Controls</h3>
-  <p class="layer-desc">Panic Key: <kbd>~</kbd> (Backquote)</p>
-  <p class="layer-desc">Redirects instantly to Google Docs and kills menu audio.</p>
-
-  <hr style="border: 0; border-top: 1px solid var(--border); margin: 15px 0;">
-
-  <h3>Tab Cloaking Profile</h3>
-  <div class="cloak-options" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
-    <button class="sidebar-btn" onclick="setTabCloak('drive')">📁 Google Drive</button>
-    <button class="sidebar-btn" onclick="setTabCloak('docs')">📄 Google Docs</button>
-    <button class="sidebar-btn" onclick="setTabCloak('canvas')">🎓 Canvas LMS</button>
-    <button class="sidebar-btn" onclick="setTabCloak('desmos')">📊 Desmos Calculator</button>
-    <button class="sidebar-btn" onclick="resetTabCloak()">🔄 Reset (Unblocktorium)</button>
-  </div>
-</div>
+      <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-stealth')">
+        🛡️ Stealth & Panic Settings &rarr;
+      </button>
       <button class="sidebar-btn layer-nav" onclick="switchLayer('layer-stats')">
         ⚡ Aura & Brainrot Stats &rarr;
       </button>
@@ -177,6 +163,17 @@
       <h3>Stealth Controls</h3>
       <p class="layer-desc">Panic Key: <kbd>~</kbd> (Backquote)</p>
       <p class="layer-desc">Redirects instantly to Google Docs and kills menu audio.</p>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 15px 0;">
+
+      <h3>Tab Cloaking Profile</h3>
+      <div class="cloak-options" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+        <button class="sidebar-btn" onclick="setTabCloak('drive')">📁 Google Drive</button>
+        <button class="sidebar-btn" onclick="setTabCloak('docs')">📄 Google Docs</button>
+        <button class="sidebar-btn" onclick="setTabCloak('canvas')">🎓 Canvas LMS</button>
+        <button class="sidebar-btn" onclick="setTabCloak('desmos')">📊 Desmos Calculator</button>
+        <button class="sidebar-btn" onclick="resetTabCloak()">🔄 Reset (Unblocktorium)</button>
+      </div>
     </div>
 
     <!-- LAYER 4: BRAINROT STATS -->
@@ -224,16 +221,6 @@
         window.location.href = 'https://docs.google.com';
       }
     });
-
-    // Tab Cloaking Function
-    function cloakTab() {
-      document.title = "My Drive - Google Drive";
-      let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-      link.type = 'image/x-icon';
-      link.rel = 'shortcut icon';
-      link.href = 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png';
-      document.getElementsByTagName('head')[0].appendChild(link);
-    }
   </script>
   <script src="games.js"></script>
   <script src="script.js"></script>

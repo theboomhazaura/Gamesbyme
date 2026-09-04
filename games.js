@@ -11,7 +11,7 @@ const GAMES = [
     slug: "flightsim",
     description: "fly a plane in an infinite world",
     color: "teal",
-    image: "images/IMG_2490.jpeg",
+    image: "images/IMG_2490.jpeg" alt="flight simulator",
     category: "GAMESBYME"
   },
   {
@@ -19,7 +19,7 @@ const GAMES = [
     slug: "Cyberscapes",
     description: "you are a in a glass tunnel overlooking duskwater.",
     color: "moss",
-    image: "images/IMG_2491.jpeg",
+    image: "images/IMG_2491.jpeg" alt="cyberscapes image",
     category: "GAMESBYME"
   },
   {
@@ -27,7 +27,7 @@ const GAMES = [
     slug: "citybuilder",
     description: "build a city and watch it rise",
     color: "teal",
-    image: "images/IMG_2492.jpeg",
+    image: "images/IMG_2492.jpeg" alt="city building simulation",
     category: "GAMESBYME"
   },
   {
@@ -35,7 +35,7 @@ const GAMES = [
     slug: "rosswoodcoffee",
     description: "run a coffee shop for 10 days and become a millionare (or not)",
     color: "clay",
-    image: "images/IMG_2496.jpeg",
+    image: "images/IMG_2496.jpeg" alt="rosswood coffee shop tycoon",
     category: "GAMESBYME"
   },
   { 
@@ -43,7 +43,7 @@ const GAMES = [
     slug: "run3",
     description: "jump through a long tunnel",
     color: "moss",
-    image: "images/IMG_2502.jpeg",
+    image: "images/IMG_2502.jpeg" alt= "run three",
     category: "Platformer"
   },
   { 
@@ -51,7 +51,7 @@ const GAMES = [
     slug: "fnaf1",
     description: "survive 5 nights at freddys",
     color: "clay",
-    image: "images/IMG_2498.jpeg",
+    image: "images/IMG_2498.jpeg" alt= "five nights at freddy's",
     category: "Horror"
   },
   { 
@@ -59,7 +59,7 @@ const GAMES = [
     slug: "geometrydashlite",
     description: "rithem based platformer",
     color: "moss",
-    image: "images/IMG_2500.jpeg",
+    image: "images/IMG_2500.jpeg" alt= "geometry dash",
     category: "Platformer"
   },
   { 
@@ -67,7 +67,7 @@ const GAMES = [
     slug: "drivemad",
     description: "drive a car on crazy obsticles",
     color: "moss",
-    image: "images/IMG_2503.jpeg",
+    image: "images/IMG_2503.jpeg" alt= "drive mad",
     category: "Driving"
   },  
   { 
@@ -75,7 +75,7 @@ const GAMES = [
     slug: "tinyfishing",
     description: "reel in the biggest catch",
     color: "teal",
-    image: "images/IMG_2512.jpeg",
+    image: "images/IMG_2512.jpeg" alt= "tiny fishing",
     category: "idle"
   },  
   {
@@ -83,7 +83,7 @@ const GAMES = [
     slug: "challengerush",
     description: "a game about jumping (not mine)",
     color: "teal",
-    image: "images/IMG_2497.jpeg",
+    image: "images/IMG_2497.jpeg" alt= "challenge rush",
     embedUrl: "https://challengerush.com/",
     category: "Platformer"
   }

@@ -63,6 +63,16 @@ const GAMES = [
     category: "Platformer"
   },
   { 
+    title: "retro bowl college",
+    slug: "retrobowlcollege",
+    description: "play this retro style football game",
+    color: "clay",
+    image: "images/IMG_2522.jpeg",
+    category: "other"
+  },
+
+  
+  { 
     title: "Drive mad",
     slug: "drivemad",
     description: "drive a car on crazy obsticles",

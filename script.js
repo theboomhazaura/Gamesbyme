@@ -28,6 +28,7 @@ const CLOAK_PROFILES = {
 // 2. HELPER FUNCTIONS
 // ==========================================
 function escapeHtml(str) {
+  if (!str) return "";
   const div = document.createElement('div');
   div.textContent = str;
   return div.innerHTML;
@@ -64,7 +65,7 @@ function resetTabCloak() {
 }
 
 // ==========================================
-// 4. GAME SHELF RENDERER (DUAL-FILTERING)
+// 4. GAME SHELF RENDERER (FAIL-SAFE DUAL-FILTERING)
 // ==========================================
 function handleSearch(event) {
   searchQuery = event.target.value.toLowerCase().trim();
@@ -92,39 +93,57 @@ function renderShelf(categoryFilter = "all") {
   if (!shelfContainer) return;
 
   shelfContainer.innerHTML = "";
-  const gamesList = typeof GAMES !== 'undefined' ? GAMES : [];
+  
+  // Verify GAMES array existence safely
+  const gamesList = (typeof GAMES !== 'undefined' && Array.isArray(GAMES)) ? GAMES : [];
 
-  // Dual filtering by category and search term
+  // Safe dual-filtering logic with fallback checks
   const filteredGames = gamesList.filter(game => {
-    const matchesCategory = (categoryFilter === "all") || (game.category === categoryFilter);
-    const matchesSearch = game.title.toLowerCase().includes(searchQuery) || 
-                          (game.description && game.description.toLowerCase().includes(searchQuery));
+    if (!game) return false;
+    
+    const title = (game.title || "").toLowerCase();
+    const description = (game.description || "").toLowerCase();
+    const category = game.category || "Uncategorized";
+
+    const matchesCategory = (categoryFilter === "all") || (category.toLowerCase() === categoryFilter.toLowerCase());
+    const matchesSearch = title.includes(searchQuery) || description.includes(searchQuery);
+
     return matchesCategory && matchesSearch;
   });
 
   const colors = ['clay', 'moss', 'teal'];
 
   if (filteredGames.length === 0) {
-    shelfContainer.innerHTML = `<p style="color: var(--text-dim); text-align: center; grid-column: 1/-1;">No games found...</p>`;
+    shelfContainer.innerHTML = `<p style="color: var(--text-dim, #8a819b); text-align: center; grid-column: 1/-1;">No games found...</p>`;
     return;
   }
 
   filteredGames.forEach((game, i) => {
+    const title = game.title || "Untitled Game";
+    const desc = game.description || "";
     const color = game.color || colors[i % colors.length];
-    const href = game.embedUrl
-      ? `play.html?src=${encodeURIComponent(game.embedUrl)}`
-      : `games/${game.slug}/index.html`;
+    
+    let href = "#";
+    if (game.embedUrl) {
+      href = `play.html?src=${encodeURIComponent(game.embedUrl)}`;
+    } else if (game.slug) {
+      href = `games/${game.slug}/index.html`;
+    }
 
     const card = document.createElement('a');
     card.className = `cartridge cartridge--${color} game-card ${color}`;
     card.href = href;
 
+    const imgElement = game.image 
+      ? `<img src="${game.image}" alt="${escapeHtml(title)} cartridge thumbnail" class="cartridge-image" onerror="this.style.display='none'">` 
+      : '';
+
     card.innerHTML = `
       <div class="cartridge-notch"></div>
       <div class="cartridge-label">
-        ${game.image ? `<img src="${game.image}" alt="${escapeHtml(game.title)}" class="cartridge-image">` : ''}
-        <h2 class="cartridge-title">${escapeHtml(game.title)}</h2>
-        <p class="cartridge-desc">${escapeHtml(game.description || '')}</p>
+        ${imgElement}
+        <h2 class="cartridge-title">${escapeHtml(title)}</h2>
+        <p class="cartridge-desc">${escapeHtml(desc)}</p>
       </div>
       <span class="cartridge-play">Play &rarr;</span>
     `;

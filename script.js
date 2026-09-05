@@ -35,15 +35,20 @@ function escapeHtml(str) {
 }
 
 // ==========================================
-// 3. TAB CLOAKING SYSTEM
+// 3. TAB CLOAKING SYSTEM (STRICT ICON OVERRIDE)
 // ==========================================
 function setTabCloak(profileKey) {
   const profile = CLOAK_PROFILES[profileKey];
   if (!profile) return;
 
   document.title = profile.title;
-  
-  let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+
+  // Remove ALL existing favicon/icon links to clear hardcoded index.html icons
+  const existingIcons = document.querySelectorAll("link[rel*='icon']");
+  existingIcons.forEach(icon => icon.remove());
+
+  // Create and append the new cloaked icon
+  const link = document.createElement('link');
   link.type = 'image/x-icon';
   link.rel = 'shortcut icon';
   link.href = profile.icon;
@@ -54,8 +59,13 @@ function setTabCloak(profileKey) {
 
 function resetTabCloak() {
   document.title = "Unblocktorium | Unblocked Games";
-  
-  let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+
+  // Remove cloaked icons
+  const existingIcons = document.querySelectorAll("link[rel*='icon']");
+  existingIcons.forEach(icon => icon.remove());
+
+  // Restore primary Unblocktorium favicon
+  const link = document.createElement('link');
   link.type = 'image/png';
   link.rel = 'icon';
   link.href = 'images/Favicon.png';
@@ -75,7 +85,7 @@ function handleSearch(event) {
 function filterCategory(event, category) {
   const buttons = document.querySelectorAll('#layer-categories .sidebar-btn');
   buttons.forEach(btn => btn.classList.remove('active'));
-  
+
   if (event && event.target) {
     event.target.classList.add('active');
   }
@@ -93,14 +103,14 @@ function renderShelf(categoryFilter = "all") {
   if (!shelfContainer) return;
 
   shelfContainer.innerHTML = "";
-  
+
   // Verify GAMES array existence safely
   const gamesList = (typeof GAMES !== 'undefined' && Array.isArray(GAMES)) ? GAMES : [];
 
   // Safe dual-filtering logic with fallback checks
   const filteredGames = gamesList.filter(game => {
     if (!game) return false;
-    
+
     const title = (game.title || "").toLowerCase();
     const description = (game.description || "").toLowerCase();
     const category = game.category || "Uncategorized";
@@ -122,7 +132,7 @@ function renderShelf(categoryFilter = "all") {
     const title = game.title || "Untitled Game";
     const desc = game.description || "";
     const color = game.color || colors[i % colors.length];
-    
+
     let href = "#";
     if (game.embedUrl) {
       href = `play.html?src=${encodeURIComponent(game.embedUrl)}`;
@@ -158,7 +168,7 @@ function renderShelf(categoryFilter = "all") {
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("sidebar-overlay");
-  
+
   if (sidebar) sidebar.classList.toggle("open");
   if (overlay) overlay.classList.toggle("active");
   document.body.classList.toggle("sidebar-active");
@@ -225,7 +235,7 @@ window.addEventListener('keydown', (e) => {
 // 6. SINGLE INITIALIZATION ON LOAD
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Restore Cloak Profile
+  // Apply saved cloak profile FIRST to ensure default favicons are wiped
   const savedCloak = localStorage.getItem('unblocktorium_cloak');
   if (savedCloak && CLOAK_PROFILES[savedCloak]) {
     setTabCloak(savedCloak);

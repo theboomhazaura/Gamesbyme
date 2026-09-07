@@ -59,7 +59,7 @@ const GAMES = [
     slug: "motox3m",
     description: "ride a motobike across the levels.",
     color: "clay",
-    image: "images/IMG_2544.jpeg",
+    image: "images/IMG_2524.jpeg",
     category: "Driving"
   },
 

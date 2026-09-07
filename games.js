@@ -47,6 +47,13 @@ const GAMES = [
     category: "Platformer"
   },
   { 
+    title: "Bitlife",
+    slug: "bitlife",
+    description: "a life simulator where you can do anything",
+    color: "moss",
+    category: "other"
+  },
+  { 
     title: "five nights at freddys 1",
     slug: "fnaf1",
     description: "survive 5 nights at freddys",

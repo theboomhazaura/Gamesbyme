@@ -55,6 +55,16 @@ const GAMES = [
     category: "Horror"
   },
   { 
+    title: "Moto x3m",
+    slug: "motox3m",
+    description: "ride a motobike across the levels.",
+    color: "clay",
+    image: "images/IMG_2544.jpeg",
+    category: "Driving"
+  },
+
+  
+  { 
     title: "geometry dash lite",
     slug: "geometrydashlite",
     description: "rithem based platformer",

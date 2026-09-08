@@ -51,7 +51,7 @@ const GAMES = [
     slug: "bitlife",
     description: "a life simulator where you can do anything",
     color: "moss",
-    image: "images/logo.png,
+    image: "images/logo.png",
     category: "other"
   },
   { 

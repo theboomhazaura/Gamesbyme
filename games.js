@@ -107,15 +107,6 @@ const GAMES = [
     category: "Idle"
   }, 
   { 
-    title: "slice master",
-    slug: "slicemaster",
-    description: "a game about cutting fruits",
-    color: "teal",
-    image: "images/IMG_2530.jpeg",
-    embedUrl: "https://www.coolmathgames.com/0-slice-master#immersiveModal",
-    category: "Platformer"
-  },
-  { 
     title: "challenge rush",
     slug: "challengerush",
     description: "a game about jumping (not mine)",

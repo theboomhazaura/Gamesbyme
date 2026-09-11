@@ -87,6 +87,14 @@ const GAMES = [
     category: "Platformer"
   },
   { 
+    title: "slope",
+    slug: "slope",
+    description: "play as a ball and dont fall",
+    color: "moss",
+    image: "images/IMG_2536.jpeg",
+    category: "Platformer"
+  },
+  { 
     title: "retro bowl",
     slug: "retrobowl",
     description: "play this retro style football game",

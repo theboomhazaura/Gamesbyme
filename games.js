@@ -70,8 +70,14 @@ const GAMES = [
     image: "images/IMG_2524.jpeg",
     category: "Driving"
   },
-
-  
+  { 
+    title: "Escape Roads 2",
+    slug: "escaperoads",
+    description: "drive a car in a city and avoid obstructions whilst being in an epic police chase",
+    color: "moss",
+    image: "images/loading.png",
+    category: "Driving"
+  },
   { 
     title: "geometry dash lite",
     slug: "geometrydashlite",

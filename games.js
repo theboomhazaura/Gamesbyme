@@ -63,6 +63,14 @@ const GAMES = [
     category: "Horror"
   },
   { 
+    title: "Cookie Clicker",
+    slug: "cookieclicker",
+    description: "click the cookie to make more cookies",
+    color: "clay",
+    image: "images/IMG_2538.jpeg",
+    category: "Idle"
+  },
+  { 
     title: "Moto x3m",
     slug: "motox3m",
     description: "ride a motobike across the levels.",

@@ -44,7 +44,7 @@ const GAMES = [
     description: "play this retro shooter and shoot the monsters",
     color: "clay",
     image: "doom.png",
-    category: "shooter"
+    category: "Shooter"
   },
   { 
     title: "Run 3",

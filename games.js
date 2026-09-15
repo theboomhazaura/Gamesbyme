@@ -38,6 +38,14 @@ const GAMES = [
     image: "images/IMG_2496.jpeg",
     category: "GAMESBYME"
   },
+   {
+    title: "DOOM",
+    slug: "Doom",
+    description: "play this retro shooter and shoot the monsters",
+    color: "clay",
+    image: "doom.png",
+    category: "shooter"
+  },
   { 
     title: "Run 3",
     slug: "run3",

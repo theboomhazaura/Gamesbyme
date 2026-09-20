@@ -43,6 +43,7 @@ const GAMES = [
     slug: "gtavicecity",
     description: "play gta vice city unblocked on unblocktorium",
     color: "teal",
+    image: "images/GTA-VICE-CITY.png",
     embedUrl: "https://unblockedclassroomgames.gitlab.io/games/gta-vice-city/gta-vice-city.html",
     category: "Shooter"
   },

@@ -38,6 +38,14 @@ const GAMES = [
     image: "images/IMG_2496.jpeg",
     category: "GAMESBYME"
   },
+   { 
+    title: "gta vice city",
+    slug: "gtavicecity",
+    description: "play gta vice city unblocked on unblocktorium",
+    color: "teal",
+    embedUrl: "https://unblockedclassroomgames.gitlab.io/games/gta-vice-city/gta-vice-city.html",
+    category: "Shooter"
+  }
    {
     title: "DOOM",
     slug: "Doom",

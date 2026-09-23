@@ -104,6 +104,14 @@ const GAMES = [
     category: "Idle"
   },
   { 
+    title: "awesome tanks",
+    slug: "awesometanks1",
+    description: "in this game upgrade your tank and shoot the other tanks",
+    color: "clay",
+    image: "images/IMG_2566.jpeg",
+    category: "Shooter"
+  },
+  { 
     title: "Moto x3m",
     slug: "motox3m",
     description: "ride a motobike across the levels.",

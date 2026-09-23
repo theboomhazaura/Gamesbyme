@@ -71,6 +71,14 @@ const GAMES = [
     image: "games/ragdoll_archers/logo.jpeg",
     category: "other"
   },
+   { 
+    title: "ragdoll hit",
+    slug: "ragdoll_hit",
+    description: "fight bosses and get op gear",
+    color: "moss",
+    image: "games/ragdoll_hit/logo.jpeg",
+    category: "other"
+  },
   { 
     title: "Bitlife",
     slug: "bitlife",

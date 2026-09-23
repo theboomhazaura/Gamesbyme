@@ -111,6 +111,14 @@ const GAMES = [
     image: "images/IMG_2566.jpeg",
     category: "Shooter"
   },
+   { 
+    title: "awesome tanks 2",
+    slug: "awesometanks2",
+    description: "in this game upgrade your tank with more upgrades and shoot the other tanks again",
+    color: "clay",
+    image: "images/IMG_2567.jpeg",
+    category: "Shooter"
+  },
   { 
     title: "Moto x3m",
     slug: "motox3m",

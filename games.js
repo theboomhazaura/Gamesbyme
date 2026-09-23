@@ -63,6 +63,14 @@ const GAMES = [
     image: "images/IMG_2502.jpeg",
     category: "Platformer"
   },
+    { 
+    title: "ragdoll archers",
+    slug: ".",
+    description: "shoot the other tower and dont get hit",
+    color: "moss",
+    image: ".",
+    category: "other"
+  },
   { 
     title: "Bitlife",
     slug: "bitlife",

@@ -65,10 +65,10 @@ const GAMES = [
   },
     { 
     title: "ragdoll archers",
-    slug: ".",
+    slug: "ragdoll_archers",
     description: "shoot the other tower and dont get hit",
     color: "moss",
-    image: ".",
+    image: "games/ragdoll_archers/logo.jpeg",
     category: "other"
   },
   { 

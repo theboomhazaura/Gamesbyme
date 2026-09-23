@@ -76,7 +76,7 @@ const GAMES = [
     slug: "ragdoll_hit",
     description: "fight bosses and get op gear",
     color: "moss",
-    image: "games/ragdoll_hit/logo.jpeg",
+    image: "games/ragdoll_hit/3c892779be9dabb3589586c83ad3eeed.png",
     category: "other"
   },
   { 

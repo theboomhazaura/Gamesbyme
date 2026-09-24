@@ -152,7 +152,7 @@ code {
 
 #game-search:focus {
   border-color: var(--main-accent);
-  box-shadow: 0 0 8px var(--main-accent);
+  box-shadow: 0 0 10px var(--main-accent);
 }
 
 .shelf, #shelf-container, .shelf-grid {
@@ -192,7 +192,7 @@ code {
 .cartridge:focus-visible {
   transform: translateY(-4px);
   border-color: var(--main-accent);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 12px var(--main-accent);
 }
 
 .cartridge:focus-visible {
@@ -232,6 +232,11 @@ code {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.cartridge:hover .cartridge-play {
+  color: var(--main-accent);
 }
 
 /* Cartridge Color Classes */
@@ -250,13 +255,14 @@ code {
   left: 15px;
   z-index: 1000;
   background: var(--main-accent);
-  color: #000;
+  color: #000000;
   border: none;
   padding: 10px 16px;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+  box-shadow: 0 0 12px var(--main-accent);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 #sidebar-overlay {
@@ -326,10 +332,13 @@ code {
   text-align: left;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
-.sidebar-btn:hover { background: #27272a; }
+.sidebar-btn:hover, .sidebar-btn.active {
+  background: #27272a;
+  border-color: var(--main-accent);
+}
 
 .back-btn {
   background: none;
@@ -344,7 +353,8 @@ code {
   padding: 10px;
   margin-bottom: 8px;
   border-radius: 6px;
-  border-left: 3px solid var(--main-accent);
+  border-left: 4px solid var(--main-accent);
+  transition: border-color 0.3s ease;
 }
 
 /* Main Content Push Effect */
@@ -385,12 +395,8 @@ code {
 }
 
 .hex-swatch {
-  width: 40px;
-  height: 46px;
-  background-color: var(--swatch-color);
-  fill: var(--swatch-color);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   cursor: pointer;
+  pointer-events: visiblePainted !important;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 

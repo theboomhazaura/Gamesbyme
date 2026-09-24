@@ -1,34 +1,71 @@
+/* ==========================================
+   1. MASTER COLOR VARIABLES & LIGHT THEME
+   ========================================== */
 :root {
-  --bg: #211A2E;
-  --bg-raised: #2B2240;
-  --text: #EFE8DA;
-  --text-dim: #B8AFC7;
-  --clay: #D66B4B;
-  --moss: #7A9B6B;
-  --auqa: #A1FFFF;
-  --purple: #66023C;
-  --teal: #4F8C99;
+  /* Dynamic Main Accent (Updated by Hex Color Picker) */
+  --main-accent: #00ff88;
+
+  /* Base Theme Variables (Default Dark: Pitch Black) */
+  --bg: #000000;
+  --bg-raised: #121212;
+  --text: #ffffff;
+  --text-dim: #a1a1aa;
+  --border: rgba(255, 255, 255, 0.12);
+  --card-bg: #0d0d0d;
+  --card-border: #27272a;
   --slot: #17121F;
   --radius: 14px;
+
+  /* Cartridge Accent Colors */
+  --clay: #D66B4B;
+  --moss: #7A9B6B;
+  --aqua: #A1FFFF;
+  --purple: #66023C;
+  --teal: #4F8C99;
 }
 
-* { box-sizing: border-box; }
+/* LIGHT MODE OVERRIDES */
+body.light-theme {
+  --bg: #ffffff;
+  --bg-raised: #f4f4f5;
+  --text: #09090b;
+  --text-dim: #71717a;
+  --border: rgba(0, 0, 0, 0.1);
+  --card-bg: #fdfdfd;
+  --card-border: #e4e4e7;
+}
+
+/* ==========================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 body {
-  margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.5;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
 
 code {
@@ -39,102 +76,12 @@ code {
   font-size: 0.9em;
 }
 
-CSS
-/* ROOT COLOR VARIABLES (DEFAULT DARK MODE: PURE BLACK) */
-:root {
-  --bg: #000000;              /* Pitch Black */
-  --bg-raised: #121212;       /* Deep Charcoal for cards/headers */
-  --text: #ffffff;            /* Pure White Text */
-  --text-dim: #a1a1aa;        /* Muted Gray */
-  --border: rgba(255, 255, 255, 0.12);
-  --card-bg: #0d0d0d;         /* Ultra Dark Card Background */
-  --card-border: #27272a;     /* Sharp Dark Border */
-}
-
-/* LIGHT MODE OVERRIDES (PURE WHITE) */
-body.light-theme {
-  --bg: #ffffff;              /* Pure White */
-  --bg-raised: #f4f4f5;       /* Soft Light Gray for headers */
-  --text: #09090b;            /* Near Black Text for readability */
-  --text-dim: #71717a;        /* Muted Dark Gray */
-  --border: rgba(0, 0, 0, 0.1);
-  --card-bg: #fdfdfd;         /* Crisp White Card */
-  --card-border: #e4e4e7;     /* Light Gray Border */
-}
-
-/* APPLY VARIABLE COLORS TO MAIN LAYOUT */
-body {
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-#main-content {
-  background: var(--bg);
-}
-
-.hero {
-  border-bottom: 1px solid var(--border);
-}
-
-.game-card, .cartridge {
-  background: var(--card-bg);
-  border-color: var(--card-border);
-}
-
-.search-container {
-  max-width: 1200px;
-  margin: 0 auto 20px;
-  padding: 0 20px;
-}
-
-#game-search {
-  width: 100%;
-  padding: 12px 18px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--bg-raised);
-  color: var(--text);
-  font-size: 1rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-#game-search:focus {
-  border-color: #00ff88;
-  box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
-}
-
-/* Prevent horizontal overflow and force perfect box sizing */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden; /* Stops horizontal side scrolling completely */
-  min-height: 100vh;
-}
-
-/* Ensure your game shelf grid stays strictly inside the screen */
-.shelf, #shelf-container {
-  width: 100%;
-  max-width: 1200px; /* Limits max width on wide monitors */
-  margin: 0 auto;    /* Centers the shelf horizontally */
-  padding: 20px;
-}
-
-
-
-/* ---------- Hero ---------- */
-
+/* ==========================================
+   3. HERO SECTION & HEADER
+   ========================================== */
 .hero {
   padding: 5rem 1.5rem 3.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-inner {
@@ -164,30 +111,74 @@ html, body {
   margin: 0;
 }
 
-/* ---------- Shelf grid ---------- */
-
-.shelf {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* ---------- Cartridge card ---------- */
+.site-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
 
-.cartridge {
+.site-logo.hidden {
+  display: none;
+}
+
+/* ==========================================
+   4. SEARCH & GAME SHELF GRID
+   ========================================== */
+.search-container {
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+}
+
+#game-search {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--text);
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#game-search:focus {
+  border-color: var(--main-accent);
+  box-shadow: 0 0 8px var(--main-accent);
+}
+
+.shelf, #shelf-container, .shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ==========================================
+   5. CARTRIDGE & GAME CARDS
+   ========================================== */
+.cartridge, .game-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--bg-raised);
+  background: var(--card-bg);
   border-radius: var(--radius);
   padding: 1.25rem 1.25rem 1.5rem;
   text-decoration: none;
   color: inherit;
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  border: 1px solid var(--card-border);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .cartridge-image {
@@ -200,7 +191,8 @@ html, body {
 .cartridge:hover,
 .cartridge:focus-visible {
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.18);
+  border-color: var(--main-accent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .cartridge:focus-visible {
@@ -242,59 +234,22 @@ html, body {
   color: var(--text);
 }
 
-.cartridge--clay .cartridge-notch { background: var(--clay); }
-.cartridge--clay .cartridge-label { background: var(--clay); }
+/* Cartridge Color Classes */
+.cartridge--clay .cartridge-notch, .cartridge--clay .cartridge-label { background: var(--clay); }
+.cartridge--moss .cartridge-notch, .cartridge--moss .cartridge-label { background: var(--moss); }
+.cartridge--teal .cartridge-notch, .cartridge--teal .cartridge-label { background: var(--teal); }
+.cartridge--aqua .cartridge-notch, .cartridge--aqua .cartridge-label { background: var(--aqua); }
+.cartridge--purple .cartridge-notch, .cartridge--purple .cartridge-label { background: var(--purple); }
 
-.cartridge--moss .cartridge-notch { background: var(--moss); }
-.cartridge--moss .cartridge-label { background: var(--moss); }
-
-.cartridge--teal .cartridge-notch { background: var(--teal); }
-.cartridge--teal .cartridge-label { background: var(--teal); }
-
-.cartridge--auqa .cartridge-notch { background: var(--auqa); }
-.cartridge--auqa .cartridge-label { background: var(--auqa); }
-
-.cartridge--purple .cartridge-notch { background: var(--purple); }
-.cartridge--purple .cartridge-label { background: var(--purple); }
-
-
-.gd-audio-player {
-  display: flex;
-  justify-content: center;
-  margin: 15px 0;
-}
-
-.gd-btn {
-  background-color: #222;
-  color: #00ff88;
-  border: 2px solid #00ff88;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.gd-btn:hover {
-  background-color: #00ff88;
-  color: #000;
-  box-shadow: 0 0 10px #00ff88;
-}
-
-.gd-btn.active {
-  background-color: #00ff88;
-  color: #000;
-}
-
-/* FLOATING TOGGLE BUTTON */
+/* ==========================================
+   6. SIDEBAR & NAVIGATION LAYERS
+   ========================================== */
 #sidebar-toggle {
   position: fixed;
   top: 15px;
   left: 15px;
   z-index: 1000;
-  background: #00ff88;
+  background: var(--main-accent);
   color: #000;
   border: none;
   padding: 10px 16px;
@@ -304,27 +259,21 @@ html, body {
   box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
 }
 
-/* OVERLAY BACKDROP */
 #sidebar-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1001;
   display: none;
 }
-#sidebar-overlay.active {
-  display: block;
-}
+#sidebar-overlay.active { display: block; }
 
-/* SIDEBAR CONTAINER */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -100%; /* Hidden off-screen by default */
-  width: 100%;  /* Mobile default: 100% width */
+  left: -100%;
+  width: 100%;
   height: 100vh;
   background: #121215;
   color: #fff;
@@ -335,30 +284,26 @@ html, body {
   overflow-y: auto;
 }
 
-/* TABLET & DESKTOP: Take 1/3 of the screen */
 @media (min-width: 600px) {
   .sidebar {
     width: 33.33vw;
     min-width: 300px;
     left: -33.33vw;
-    border-right: 2px solid #27272a;
+    border-right: 2px solid var(--card-border);
   }
 }
 
-/* OPEN STATE */
-.sidebar.open {
-  left: 0;
-}
+.sidebar.open { left: 0; }
 
-/* SIDEBAR HEADER */
 .sidebar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #27272a;
+  border-bottom: 1px solid var(--card-border);
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
+
 .close-btn {
   background: none;
   border: none;
@@ -367,20 +312,14 @@ html, body {
   cursor: pointer;
 }
 
-/* LAYER MANAGEMENT */
-.sidebar-layer {
-  display: none;
-}
-.sidebar-layer.active {
-  display: block;
-}
+.sidebar-layer { display: none; }
+.sidebar-layer.active { display: block; }
 
-/* BUTTONS & UI CONTROLS */
 .sidebar-btn {
   width: 100%;
   background: #18181b;
-  color: #00ff88;
-  border: 1px solid #27272a;
+  color: var(--main-accent);
+  border: 1px solid var(--card-border);
   padding: 12px;
   margin-bottom: 10px;
   border-radius: 6px;
@@ -389,43 +328,41 @@ html, body {
   cursor: pointer;
   transition: background 0.2s;
 }
-.sidebar-btn:hover {
-  background: #27272a;
-}
+
+.sidebar-btn:hover { background: #27272a; }
+
 .back-btn {
   background: none;
   border: none;
-  color: #a1a1aa;
+  color: var(--text-dim);
   cursor: pointer;
   margin-bottom: 15px;
 }
+
 .stat-badge {
   background: #18181b;
   padding: 10px;
   margin-bottom: 8px;
   border-radius: 6px;
-  border-left: 3px solid #00ff88;
+  border-left: 3px solid var(--main-accent);
 }
 
-/* MAIN CONTENT CONTAINER */
+/* Main Content Push Effect */
 #main-content {
   width: 100%;
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
-  /* Smooth transition when sidebar slides in */
   transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
-/* TABLET & DESKTOP: Shrink shelf when sidebar is open */
 @media (min-width: 600px) {
   body.sidebar-active #main-content {
-    margin-left: 33.33vw; /* Push content over */
-    width: 66.67vw;       /* Take up remaining 2/3 of screen */
+    margin-left: 33.33vw;
+    width: 66.67vw;
   }
 }
 
-/* MOBILE: Keep shelf 100% since sidebar overlays fully on mobile */
 @media (max-width: 599px) {
   body.sidebar-active #main-content {
     width: 100%;
@@ -433,36 +370,11 @@ html, body {
   }
 }
 
-/* GAME SHELF GRID */
-.shelf-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-  width: 100%;
-}
-
-/* LOGO HEADER LAYOUT */
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.site-logo {
-  height: 50px; /* Adjust height to match your preferred scale */
-  width: auto;
-  object-fit: contain;
-  transition: opacity 0.3s ease;
-}
-
-/* Hide helper class */
-.site-logo.hidden {
-  display: none;
-}
-
-/* Modal Overlay Layer */
+/* ==========================================
+   7. THEME MODAL & INLINE SVG HEXAGON PALETTE
+   ========================================== */
 .theme-modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
@@ -472,23 +384,24 @@ html, body {
   z-index: 9999;
 }
 
-/* Hexagon Swatch Styling */
 .hex-swatch {
   width: 40px;
   height: 46px;
   background-color: var(--swatch-color);
+  fill: var(--swatch-color);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .hex-swatch:hover {
   transform: scale(1.15);
+  filter: brightness(1.25);
 }
 
-
-/* ---------- Footer ---------- */
-
+/* ==========================================
+   8. FOOTER
+   ========================================== */
 .site-footer {
   text-align: center;
   padding: 2rem 1.5rem 3rem;

@@ -2,8 +2,9 @@
    1. MASTER COLOR VARIABLES & LIGHT THEME
    ========================================== */
 :root {
-  /* Dynamic Main Accent (Updated by Hex Color Picker) */
+  /* Dynamic Accent Colors (Updated by Hex Swatches) */
   --main-accent: #00ff88;
+  --bg-accent: #000000; /* Dynamic accent tint for background */
 
   /* Base Theme Variables (Default Dark: Pitch Black) */
   --bg: #000000;
@@ -56,11 +57,13 @@ html, body {
 }
 
 body {
-  background: var(--bg);
+  /* Dark tint gradient overlay mixed with dynamic accent color */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.92) 100%), var(--bg-accent, var(--bg));
+  background-attachment: fixed;
   color: var(--text);
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.5;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.4s ease, color 0.3s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -362,6 +365,7 @@ code {
   width: 100%;
   min-height: 100vh;
   padding: 20px;
+  background: transparent;
   box-sizing: border-box;
   transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
 }

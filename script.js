@@ -231,40 +231,41 @@ window.addEventListener('keydown', (e) => {
 // 6. INITIALIZATION ON LOAD
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Apply saved cloak profile FIRST
-  const savedCloak = localStorage.getItem('unblocktorium_cloak');
-  if (savedCloak && CLOAK_PROFILES[savedCloak]) {
-    setTabCloak(savedCloak);
-  }
-
   // Restore Dark/Light Theme
   const savedTheme = localStorage.getItem("unblocktorium_theme");
-  const themeBtn = document.getElementById("theme-btn");
-  const logoDark = document.getElementById("logo-dark");
-  const logoLight = document.getElementById("logo-light");
-
   if (savedTheme === "light") {
     document.body.classList.add("light-theme");
-    if (themeBtn) themeBtn.innerHTML = "☀️ Theme: Light Mode";
-    if (logoDark && logoLight) {
-      logoDark.classList.add("hidden");
-      logoLight.classList.remove("hidden");
-    }
   }
 
-  // Restore Hex Color Accent Theme
-  const savedColor = localStorage.getItem('unblocktorium-theme');
+  // Restore Saved Hex Accent Color
+  const savedColor = localStorage.getItem("unblocktorium-theme");
   if (savedColor) {
     document.documentElement.style.setProperty('--main-accent', savedColor);
   }
 
-  // Bind Hex Swatch Click Listeners (Inline Method 1 SVG Support)
-  document.querySelectorAll('.hex-swatch').forEach(swatch => {
+  // BIND CLICK LISTENERS TO SVG HEXAGONS
+  const swatches = document.querySelectorAll('.hex-swatch');
+  
+  swatches.forEach(swatch => {
+    // Enable pointer events explicitly for SVG nodes
+    swatch.style.pointerEvents = 'auto';
+
     swatch.addEventListener('click', (e) => {
-      const selectedColor = e.target.getAttribute('data-color');
+      // Get color from data-color attribute or inline fill
+      const selectedColor = e.target.getAttribute('data-color') || e.target.getAttribute('fill');
+      
       if (selectedColor) {
+        // 1. Update root CSS variable
         document.documentElement.style.setProperty('--main-accent', selectedColor);
+        
+        // 2. Save color choice to LocalStorage
         localStorage.setItem('unblocktorium-theme', selectedColor);
+
+        // 3. Optional visual feedback: pulse effect
+        e.target.style.transform = 'scale(1.3)';
+        setTimeout(() => {
+          e.target.style.transform = 'scale(1)';
+        }, 200);
       }
     });
   });

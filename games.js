@@ -10,7 +10,7 @@ const GAMES = [
     title: "flight simulator",
     slug: "flightsim",
     description: "fly a plane in an infinite world",
-    color: "auqa",
+    color: "teal",
     image: "images/IMG_2490.jpeg",
     category: "GAMESBYME"
   },
@@ -67,7 +67,7 @@ const GAMES = [
     title: "smash karts",
     slug: "smashkarts",
     description: "race karts in this multiplayer game",
-    color: "auqa",
+    color: "teal",
     image: "images/IMG_2574.jpeg",
     category: "Driving"
   },
@@ -115,7 +115,7 @@ const GAMES = [
     title: "snow rider 3d",
     slug: "Snowrider3d",
     description: "ride the sled and do not crash it",
-    color: "auqa",
+    color: "teal",
     image: "images/IMG_2573.jpeg",
     category: "driving"
   },
@@ -163,7 +163,7 @@ const GAMES = [
     title: "slope",
     slug: "slope",
     description: "play as a ball and dont fall",
-    color: "auqa",
+    color: "teal",
     image: "images/IMG_2536.jpeg",
     category: "Platformer"
   },
@@ -205,7 +205,7 @@ const GAMES = [
     title: "ovo",
     slug: "ovo",
     description: "jump across difficult levels",
-    color: "auqa",
+    color: "teal",
     image: "images/IMG_2575.jpeg",
     category: "Platformer"
   }, 

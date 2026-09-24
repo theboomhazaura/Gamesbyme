@@ -43,11 +43,11 @@ function setTabCloak(profileKey) {
 
   document.title = profile.title;
 
-  // Remove ALL existing favicon/icon links to clear hardcoded index.html icons
+  // Remove ALL existing favicon/icon links
   const existingIcons = document.querySelectorAll("link[rel*='icon']");
   existingIcons.forEach(icon => icon.remove());
 
-  // Create and append the new cloaked icon
+  // Create and append new cloaked icon
   const link = document.createElement('link');
   link.type = 'image/x-icon';
   link.rel = 'shortcut icon';
@@ -60,11 +60,9 @@ function setTabCloak(profileKey) {
 function resetTabCloak() {
   document.title = "Unblocktorium | Unblocked Games";
 
-  // Remove cloaked icons
   const existingIcons = document.querySelectorAll("link[rel*='icon']");
   existingIcons.forEach(icon => icon.remove());
 
-  // Restore primary Unblocktorium favicon
   const link = document.createElement('link');
   link.type = 'image/png';
   link.rel = 'icon';
@@ -75,7 +73,7 @@ function resetTabCloak() {
 }
 
 // ==========================================
-// 4. GAME SHELF RENDERER (FAIL-SAFE DUAL-FILTERING)
+// 4. GAME SHELF RENDERER
 // ==========================================
 function handleSearch(event) {
   searchQuery = event.target.value.toLowerCase().trim();
@@ -104,10 +102,8 @@ function renderShelf(categoryFilter = "all") {
 
   shelfContainer.innerHTML = "";
 
-  // Verify GAMES array existence safely
   const gamesList = (typeof GAMES !== 'undefined' && Array.isArray(GAMES)) ? GAMES : [];
 
-  // Safe dual-filtering logic with fallback checks
   const filteredGames = gamesList.filter(game => {
     if (!game) return false;
 
@@ -220,31 +216,6 @@ function toggleTheme() {
   if (themeBtn) {
     themeBtn.innerHTML = isLight ? "☀️ Theme: Light Mode" : "🌙 Theme: Dark Mode";
   }
-const themeModal = document.getElementById('theme-modal');
-const openBtn = document.getElementById('open-theme-btn');
-const closeBtn = document.getElementById('close-theme-btn');
-
-// Open / Close Modal
-openBtn.addEventListener('click', () => themeModal.style.display = 'flex');
-closeBtn.addEventListener('click', () => themeModal.style.display = 'none');
-
-// Handle Color Selection
-document.querySelectorAll('.hex-swatch').forEach(swatch => {
-  swatch.addEventListener('click', (e) => {
-    const selectedColor = e.target.getAttribute('data-color');
-    
-    // Set root CSS variable dynamically
-    document.documentElement.style.setProperty('--main-accent', selectedColor);
-    
-    // Save to LocalStorage so theme persists across sessions
-    localStorage.setItem('unblocktorium-theme', selectedColor);
-  }
-
-// Load saved theme on load
-const savedColor = localStorage.getItem('unblocktorium-theme');
-if (savedColor) {
-  document.documentElement.style.setProperty('--main-accent', savedColor);
-}
 }
 
 // Global Panic Key Switch
@@ -257,16 +228,16 @@ window.addEventListener('keydown', (e) => {
 });
 
 // ==========================================
-// 6. SINGLE INITIALIZATION ON LOAD
+// 6. INITIALIZATION ON LOAD
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Apply saved cloak profile FIRST to ensure default favicons are wiped
+  // Apply saved cloak profile FIRST
   const savedCloak = localStorage.getItem('unblocktorium_cloak');
   if (savedCloak && CLOAK_PROFILES[savedCloak]) {
     setTabCloak(savedCloak);
   }
 
-  // Restore Theme
+  // Restore Dark/Light Theme
   const savedTheme = localStorage.getItem("unblocktorium_theme");
   const themeBtn = document.getElementById("theme-btn");
   const logoDark = document.getElementById("logo-dark");
@@ -280,6 +251,23 @@ document.addEventListener("DOMContentLoaded", () => {
       logoLight.classList.remove("hidden");
     }
   }
+
+  // Restore Hex Color Accent Theme
+  const savedColor = localStorage.getItem('unblocktorium-theme');
+  if (savedColor) {
+    document.documentElement.style.setProperty('--main-accent', savedColor);
+  }
+
+  // Bind Hex Swatch Click Listeners (Inline Method 1 SVG Support)
+  document.querySelectorAll('.hex-swatch').forEach(swatch => {
+    swatch.addEventListener('click', (e) => {
+      const selectedColor = e.target.getAttribute('data-color');
+      if (selectedColor) {
+        document.documentElement.style.setProperty('--main-accent', selectedColor);
+        localStorage.setItem('unblocktorium-theme', selectedColor);
+      }
+    });
+  });
 
   // Initial Shelf Render
   renderShelf("all");

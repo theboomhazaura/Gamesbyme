@@ -179,40 +179,38 @@
       <h3>Color Themes</h3>
       <p class="layer-desc">Select an accent color from the hexagon grid:</p>
 
-      <!-- Inline Method 1 SVG Hexagon Swatches -->
-      <div class="hex-grid-container" style="display: flex; justify-content: center; margin: 15px 0;">
-        <svg width="220" height="200" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
-          <!-- Row 1 -->
-          <polygon class="hex-swatch" data-color="#ff0055" points="30,5 50,16 50,38 30,49 10,38 10,16" fill="#ff0055" />
-          <polygon class="hex-swatch" data-color="#f97316" points="75,5 95,16 95,38 75,49 55,38 55,16" fill="#f97316" />
-          <polygon class="hex-swatch" data-color="#eab308" points="120,5 140,16 140,38 120,49 100,38 100,16" fill="#eab308" />
-          <polygon class="hex-swatch" data-color="#84cc16" points="165,5 185,16 185,38 165,49 145,38 145,16" fill="#84cc16" />
+     <!-- Inline Method 1 SVG Hexagon Swatches -->
+<div class="hex-grid-container" style="display: flex; justify-content: center; margin: 15px 0;">
+  <svg width="220" height="200" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
+    <!-- Row 1 -->
+    <polygon class="hex-swatch" data-color="#ff0055" points="30,5 50,16 50,38 30,49 10,38 10,16" fill="#ff0055" />
+    <polygon class="hex-swatch" data-color="#f97316" points="75,5 95,16 95,38 75,49 55,38 55,16" fill="#f97316" />
+    <polygon class="hex-swatch" data-color="#eab308" points="120,5 140,16 140,38 120,49 100,38 100,16" fill="#eab308" />
+    <polygon class="hex-swatch" data-color="#84cc16" points="165,5 185,16 185,38 165,49 145,38 145,16" fill="#84cc16" />
 
-          <!-- Row 2 -->
-          <polygon class="hex-swatch" data-color="#10b981" points="52,45 72,56 72,78 52,89 32,78 32,56" fill="#10b981" />
-          <polygon class="hex-swatch" data-color="#14b8a6" points="97,45 117,56 117,78 97,89 77,78 77,56" fill="#14b8a6" />
-          <polygon class="hex-swatch" data-color="#06b6d4" points="142,45 162,56 162,78 142,89 122,78 122,56" fill="#06b6d4" />
+    <!-- Row 2 -->
+    <polygon class="hex-swatch" data-color="#10b981" points="52,45 72,56 72,78 52,89 32,78 32,56" fill="#10b981" />
+    <polygon class="hex-swatch" data-color="#14b8a6" points="97,45 117,56 117,78 97,89 77,78 77,56" fill="#14b8a6" />
+    <polygon class="hex-swatch" data-color="#06b6d4" points="142,45 162,56 162,78 142,89 122,78 122,56" fill="#06b6d4" />
 
-          <!-- Row 3 -->
-          <polygon class="hex-swatch" data-color="#3b82f6" points="30,85 50,96 50,118 30,129 10,118 10,96" fill="#3b82f6" />
-          <polygon class="hex-swatch" data-color="#6366f1" points="75,85 95,96 95,118 75,129 55,118 55,96" fill="#6366f1" />
-          <polygon class="hex-swatch" data-color="#8b5cf6" points="120,85 140,96 140,118 120,129 100,118 100,96" fill="#8b5cf6" />
-          <polygon class="hex-swatch" data-color="#a855f7" points="165,85 185,96 185,118 165,129 145,118 145,96" fill="#a855f7" />
+    <!-- Row 3 -->
+    <polygon class="hex-swatch" data-color="#3b82f6" points="30,85 50,96 50,118 30,129 10,118 10,96" fill="#3b82f6" />
+    <polygon class="hex-swatch" data-color="#6366f1" points="75,85 95,96 95,118 75,129 55,118 55,96" fill="#6366f1" />
+    <polygon class="hex-swatch" data-color="#8b5cf6" points="120,85 140,96 140,118 120,129 100,118 100,96" fill="#8b5cf6" />
+    <polygon class="hex-swatch" data-color="#a855f7" points="165,85 185,96 185,118 165,129 145,118 145,96" fill="#a855f7" />
 
-          <!-- Row 4 -->
-          <polygon class="hex-swatch" data-color="#ec4899" points="52,125 72,136 72,158 52,169 32,158 32,136" fill="#ec4899" />
-          <polygon class="hex-swatch" data-color="#f43f5e" points="97,125 117,136 117,158 97,169 77,158 77,136" fill="#f43f5e" />
-          <polygon class="hex-swatch" data-color="#64748b" points="142,125 162,136 162,158 142,169 122,158 122,136" fill="#64748b" />
-        </svg>
-      </div>
+    <!-- Row 4 -->
+    <polygon class="hex-swatch" data-color="#ec4899" points="52,125 72,136 72,158 52,169 32,158 32,136" fill="#ec4899" />
+    <polygon class="hex-swatch" data-color="#f43f5e" points="97,125 117,136 117,158 97,169 77,158 77,136" fill="#f43f5e" />
+    <polygon class="hex-swatch" data-color="#64748b" points="142,125 162,136 162,158 142,169 122,158 122,136" fill="#64748b" />
+  </svg>
+</div>
 
-      <div class="control-group">
-        <button id="theme-btn" class="sidebar-btn" onclick="toggleTheme()">
-          🌙 Toggle Dark/Light Base
-        </button>
-      </div>
-    </div>
-
+<div class="control-group">
+  <button id="theme-btn" class="sidebar-btn" onclick="toggleTheme()">
+    🌙 Toggle Dark/Light Base
+  </button>
+</div>
     <!-- LAYER 3: GAME CATEGORIES -->
     <div id="layer-categories" class="sidebar-layer">
       <button class="back-btn" onclick="switchLayer('layer-main')">&larr; Back</button>

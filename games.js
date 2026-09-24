@@ -113,7 +113,7 @@ const GAMES = [
   },
     { 
     title: "snow rider 3d",
-    slug: "snowrider3d",
+    slug: "Snowrider3d",
     description: "ride the sled and do not crash it",
     color: "clay",
     image: "images/IMG_2573.jpeg",

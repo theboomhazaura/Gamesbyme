@@ -251,6 +251,13 @@ html, body {
 .cartridge--teal .cartridge-notch { background: var(--teal); }
 .cartridge--teal .cartridge-label { background: var(--teal); }
 
+.cartridge--auqa .cartridge-notch { background: var(--auqa); }
+.cartridge--auqa .cartridge-label { background: var(--auqa); }
+
+.cartridge--purple .cartridge-notch { background: var(--purple); }
+.cartridge--purple .cartridge-label { background: var(--purple); }
+
+
 .gd-audio-player {
   display: flex;
   justify-content: center;

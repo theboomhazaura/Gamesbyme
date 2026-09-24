@@ -220,6 +220,31 @@ function toggleTheme() {
   if (themeBtn) {
     themeBtn.innerHTML = isLight ? "☀️ Theme: Light Mode" : "🌙 Theme: Dark Mode";
   }
+const themeModal = document.getElementById('theme-modal');
+const openBtn = document.getElementById('open-theme-btn');
+const closeBtn = document.getElementById('close-theme-btn');
+
+// Open / Close Modal
+openBtn.addEventListener('click', () => themeModal.style.display = 'flex');
+closeBtn.addEventListener('click', () => themeModal.style.display = 'none');
+
+// Handle Color Selection
+document.querySelectorAll('.hex-swatch').forEach(swatch => {
+  swatch.addEventListener('click', (e) => {
+    const selectedColor = e.target.getAttribute('data-color');
+    
+    // Set root CSS variable dynamically
+    document.documentElement.style.setProperty('--main-accent', selectedColor);
+    
+    // Save to LocalStorage so theme persists across sessions
+    localStorage.setItem('unblocktorium-theme', selectedColor);
+  }
+
+// Load saved theme on load
+const savedColor = localStorage.getItem('unblocktorium-theme');
+if (savedColor) {
+  document.documentElement.style.setProperty('--main-accent', savedColor);
+}
 }
 
 // Global Panic Key Switch

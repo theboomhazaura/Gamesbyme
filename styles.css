@@ -57,8 +57,8 @@ html, body {
 }
 
 body {
-  /* Dark tint gradient overlay mixed with dynamic accent color */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.92) 100%), var(--bg-accent, var(--bg));
+  /* 50% lighter overlay (reduced from 0.82/0.92 down to 0.45/0.55) */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.55) 100%), var(--bg-accent, var(--bg));
   background-attachment: fixed;
   color: var(--text);
   font-family: 'Inter', system-ui, sans-serif;

@@ -231,37 +231,52 @@ window.addEventListener('keydown', (e) => {
 // 6. INITIALIZATION ON LOAD
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Restore Dark/Light Theme
-  const savedTheme = localStorage.getItem("unblocktorium_theme");
-  if (savedTheme === "light") {
-    document.body.classList.add("light-theme");
+  // Apply saved cloak profile FIRST
+  const savedCloak = localStorage.getItem('unblocktorium_cloak');
+  if (savedCloak && CLOAK_PROFILES[savedCloak]) {
+    setTabCloak(savedCloak);
   }
 
-  // Restore Saved Hex Accent Color
+  // Restore Dark/Light Theme Base
+  const savedTheme = localStorage.getItem("unblocktorium_theme");
+  const themeBtn = document.getElementById("theme-btn");
+  const logoDark = document.getElementById("logo-dark");
+  const logoLight = document.getElementById("logo-light");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+    if (themeBtn) themeBtn.innerHTML = "☀️ Theme: Light Mode";
+    if (logoDark && logoLight) {
+      logoDark.classList.add("hidden");
+      logoLight.classList.remove("hidden");
+    }
+  }
+
+  // Restore Saved Hex Accent & Background Color
   const savedColor = localStorage.getItem("unblocktorium-theme");
   if (savedColor) {
     document.documentElement.style.setProperty('--main-accent', savedColor);
+    document.documentElement.style.setProperty('--bg-accent', savedColor);
   }
 
   // BIND CLICK LISTENERS TO SVG HEXAGONS
   const swatches = document.querySelectorAll('.hex-swatch');
   
   swatches.forEach(swatch => {
-    // Enable pointer events explicitly for SVG nodes
     swatch.style.pointerEvents = 'auto';
 
     swatch.addEventListener('click', (e) => {
-      // Get color from data-color attribute or inline fill
       const selectedColor = e.target.getAttribute('data-color') || e.target.getAttribute('fill');
       
       if (selectedColor) {
-        // 1. Update root CSS variable
+        // 1. Update UI accents and dynamic background tint
         document.documentElement.style.setProperty('--main-accent', selectedColor);
+        document.documentElement.style.setProperty('--bg-accent', selectedColor);
         
-        // 2. Save color choice to LocalStorage
+        // 2. Persist color selection across reloads
         localStorage.setItem('unblocktorium-theme', selectedColor);
 
-        // 3. Optional visual feedback: pulse effect
+        // 3. Visual pulse feedback on click
         e.target.style.transform = 'scale(1.3)';
         setTimeout(() => {
           e.target.style.transform = 'scale(1)';

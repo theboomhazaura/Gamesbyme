@@ -189,9 +189,25 @@ const GAMES = [
     title: "tiny fishing",
     slug: "tinyfishing",
     description: "reel in the biggest catch",
-    color: "teal",
+    color: "clay",
     image: "images/IMG_2512.jpeg",
     category: "Idle"
+  }, 
+  { 
+    title: "papas burgeria",
+    slug: "papasbugeria",
+    description: "manage a restrant that sells bugers in this classic game",
+    color: "clay",
+    image: "images/IMG_2576.jpeg",
+    category: "Idle"
+  }, 
+   { 
+    title: "ovo",
+    slug: "ovo",
+    description: "jump across difficult levels",
+    color: "teal",
+    image: "images/IMG_2575.jpeg",
+    category: "Platformer"
   }, 
   { 
     title: "challenge rush",

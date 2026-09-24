@@ -103,6 +103,14 @@ const GAMES = [
     image: "images/IMG_2538.jpeg",
     category: "Idle"
   },
+    { 
+    title: "snow rider 3d",
+    slug: "snowrider3d",
+    description: "ride the sled and do not crash it",
+    color: "clay",
+    image: "images/IMG_2538.jpeg",
+    category: "driving"
+  },
   { 
     title: "awesome tanks",
     slug: "awesometanks1",

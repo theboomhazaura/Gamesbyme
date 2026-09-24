@@ -63,6 +63,14 @@ const GAMES = [
     image: "images/IMG_2502.jpeg",
     category: "Platformer"
   },
+   { 
+    title: "smash karts",
+    slug: "smashkarts",
+    description: "race karts in this multiplayer game",
+    color: "moss",
+    image: "images/IMG_2574.jpeg",
+    category: "Driving"
+  },
     { 
     title: "ragdoll archers",
     slug: "ragdoll_archers",

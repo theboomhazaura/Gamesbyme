@@ -460,6 +460,31 @@ html, body {
   display: none;
 }
 
+/* Modal Overlay Layer */
+.theme-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Hexagon Swatch Styling */
+.hex-swatch {
+  width: 40px;
+  height: 46px;
+  background-color: var(--swatch-color);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.hex-swatch:hover {
+  transform: scale(1.15);
+}
 
 
 /* ---------- Footer ---------- */

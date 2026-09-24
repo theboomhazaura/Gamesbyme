@@ -108,7 +108,7 @@ const GAMES = [
     slug: "snowrider3d",
     description: "ride the sled and do not crash it",
     color: "clay",
-    image: "images/IMG_2538.jpeg",
+    image: "images/IMG_2573.jpeg",
     category: "driving"
   },
   { 

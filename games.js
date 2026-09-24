@@ -10,7 +10,7 @@ const GAMES = [
     title: "flight simulator",
     slug: "flightsim",
     description: "fly a plane in an infinite world",
-    color: "teal",
+    color: "auqa",
     image: "images/IMG_2490.jpeg",
     category: "GAMESBYME"
   },
@@ -18,7 +18,7 @@ const GAMES = [
     title: "Cyberscapes",
     slug: "Cyberscapes",
     description: "you are a in a glass tunnel overlooking duskwater.",
-    color: "moss",
+    color: "purple",
     image: "images/IMG_2491.jpeg",
     category: "GAMESBYME"
   },
@@ -34,7 +34,7 @@ const GAMES = [
     title: "rosswood coffee shop",
     slug: "rosswoodcoffee",
     description: "run a coffee shop for 10 days and become a millionare (or not)",
-    color: "clay",
+    color: "purple",
     image: "images/IMG_2496.jpeg",
     category: "GAMESBYME"
   },
@@ -42,7 +42,7 @@ const GAMES = [
     title: "gta vice city",
     slug: "gtavicecity",
     description: "play gta vice city unblocked on unblocktorium",
-    color: "teal",
+    color: "purple",
     image: "images/GTA-VICE-CITY.png",
     embedUrl: "https://unblockedclassroomgames.gitlab.io/games/gta-vice-city/gta-vice-city.html",
     category: "Shooter"
@@ -51,7 +51,7 @@ const GAMES = [
     title: "DOOM",
     slug: "Doom",
     description: "play this retro shooter and shoot the monsters",
-    color: "clay",
+    color: "purple",
     image: "doom.png",
     category: "Shooter"
   },
@@ -67,7 +67,7 @@ const GAMES = [
     title: "smash karts",
     slug: "smashkarts",
     description: "race karts in this multiplayer game",
-    color: "moss",
+    color: "auqa",
     image: "images/IMG_2574.jpeg",
     category: "Driving"
   },
@@ -91,7 +91,7 @@ const GAMES = [
     title: "Bitlife",
     slug: "bitlife",
     description: "a life simulator where you can do anything",
-    color: "moss",
+    color: "purple",
     image: "images/logo.png",
     category: "other"
   },
@@ -115,7 +115,7 @@ const GAMES = [
     title: "snow rider 3d",
     slug: "Snowrider3d",
     description: "ride the sled and do not crash it",
-    color: "clay",
+    color: "auqa",
     image: "images/IMG_2573.jpeg",
     category: "driving"
   },
@@ -155,7 +155,7 @@ const GAMES = [
     title: "geometry dash lite",
     slug: "geometrydashlite",
     description: "rithem based platformer",
-    color: "moss",
+    color: "purple",
     image: "images/IMG_2500.jpeg",
     category: "Platformer"
   },
@@ -163,7 +163,7 @@ const GAMES = [
     title: "slope",
     slug: "slope",
     description: "play as a ball and dont fall",
-    color: "moss",
+    color: "auqa",
     image: "images/IMG_2536.jpeg",
     category: "Platformer"
   },
@@ -189,7 +189,7 @@ const GAMES = [
     title: "tiny fishing",
     slug: "tinyfishing",
     description: "reel in the biggest catch",
-    color: "clay",
+    color: "purple",
     image: "images/IMG_2512.jpeg",
     category: "Idle"
   }, 
@@ -205,7 +205,7 @@ const GAMES = [
     title: "ovo",
     slug: "ovo",
     description: "jump across difficult levels",
-    color: "teal",
+    color: "auqa",
     image: "images/IMG_2575.jpeg",
     category: "Platformer"
   }, 

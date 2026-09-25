@@ -171,9 +171,11 @@ function toggleSidebar() {
 }
 
 function switchLayer(layerId) {
+  // Hide all layers
   const layers = document.querySelectorAll(".sidebar-layer");
   layers.forEach(layer => layer.classList.remove("active"));
 
+  // Show the selected layer
   const targetLayer = document.getElementById(layerId);
   if (targetLayer) {
     targetLayer.classList.add("active");

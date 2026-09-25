@@ -52,7 +52,7 @@ const GAMES = [
     slug: "Doom",
     description: "play this retro shooter and shoot the monsters",
     color: "purple",
-    image: "doom.png",
+    image: "images/doom.png",
     category: "Shooter"
   },
   { 

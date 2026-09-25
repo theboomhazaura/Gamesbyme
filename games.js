@@ -209,6 +209,22 @@ const GAMES = [
     image: "images/IMG_2575.jpeg",
     category: "Platformer"
   }, 
+    { 
+    title: "boxing random",
+    slug: "boxingrandom",
+    description: "fight the other player with random events occuring",
+    color: "clay",
+    image: "images/IMG_2579.jpeg",
+    category: "other"
+  }, 
+    { 
+    title: "volleyball random",
+    slug: "Volleyballrandom",
+    description: "play volleyball against somone with random events",
+    color: "purple",
+    image: "images/IMG_2580.jpeg",
+    category: "other"
+  }, 
   { 
     title: "challenge rush",
     slug: "challengerush",

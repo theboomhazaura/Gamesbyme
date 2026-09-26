@@ -91,7 +91,7 @@ const GAMES = [
     title: "plants VS zombies",
     slug: "plantsvszombies",
     description: "play plants vs zombies unblocked on unblocktorium",
-    color: "purple",
+    color: "moss",
     image: "images/IMG_2588.jpeg",
     category: "other"
   },
@@ -99,7 +99,7 @@ const GAMES = [
     title: "Rooftop snipers",
     slug: "rooftopsnipers",
     description: "shoot the other player in this fast paced 2 player game",
-    color: "purple",
+    color: "teal",
     image: "images/IMG_2589.jpeg",
     category: "Shooter"
   },

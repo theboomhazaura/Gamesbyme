@@ -87,13 +87,21 @@ const GAMES = [
     image: "games/ragdoll_hit/3c892779be9dabb3589586c83ad3eeed.png",
     category: "other"
   },
-  { 
-    title: "Bitlife",
-    slug: "bitlife",
-    description: "a life simulator where you can do anything",
+   { 
+    title: "plants VS zombies",
+    slug: "plantsvszombies",
+    description: "play plants vs zombies unblocked on unblocktorium",
     color: "purple",
-    image: "images/logo.png",
+    image: "images/IMG_2588.jpeg",
     category: "other"
+  },
+  { 
+    title: "Rooftop snipers",
+    slug: "rooftopsnipers",
+    description: "shoot the other player in this fast paced 2 player game",
+    color: "purple",
+    image: "images/IMG_2589.jpeg",
+    category: "Shooter"
   },
   { 
     title: "five nights at freddys 1",

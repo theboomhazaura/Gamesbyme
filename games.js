@@ -88,6 +88,14 @@ const GAMES = [
     category: "other"
   },
    { 
+    title: "Bitlife",
+    slug: "bitlife",
+    description: "a life simulator where you can do anything",
+    color: "purple",
+    image: "images/logo.png",
+    category: "other"
+  },
+   { 
     title: "plants VS zombies",
     slug: "plantsvszombies",
     description: "play plants vs zombies unblocked on unblocktorium",

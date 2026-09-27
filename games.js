@@ -55,6 +55,22 @@ const GAMES = [
     image: "images/doom.png",
     category: "Shooter"
   },
+   {
+    title: "Angry birds",
+    slug: "angrybirds",
+    description: "use the slingshot to slingshot the birds to destroy the evil pigs tower",
+    color: "moss",
+    image: "images/IMG_2592",
+    category: "other"
+  },
+   {
+    title: "crossy road",
+    slug: "crossyroad",
+    description: "why did the chicken cross the road? to get to the other side!",
+    color: "purple",
+    image: "images/IMG_2591",
+    category: "Platformer"
+  },
   { 
     title: "Run 3",
     slug: "run3",

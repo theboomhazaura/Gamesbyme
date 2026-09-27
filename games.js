@@ -60,7 +60,7 @@ const GAMES = [
     slug: "angrybirds",
     description: "use the slingshot to slingshot the birds to destroy the evil pigs tower",
     color: "moss",
-    image: "images/IMG_2592",
+    image: "images/IMG_2592.jpeg",
     category: "other"
   },
    {
@@ -68,7 +68,7 @@ const GAMES = [
     slug: "crossyroad",
     description: "why did the chicken cross the road? to get to the other side!",
     color: "purple",
-    image: "images/IMG_2591",
+    image: "images/IMG_2591.jpeg",
     category: "Platformer"
   },
   { 

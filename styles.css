@@ -194,3 +194,75 @@ code {
 .cartridge:hover,
 .cartridge:focus-visible {
   transform: translateY(-4px);
+  border-color: var(--main-accent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 12px var(--main-accent);
+}
+
+.cartridge:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.cartridge-notch {
+  width: 36px;
+  height: 8px;
+  border-radius: 0 0 6px 6px;
+  margin-bottom: 1rem;
+}
+
+.cartridge-label {
+  border-radius: 8px;
+  padding: 0.9rem 1rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.cartridge-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 0 0 0.35rem;
+  color: #1B1626;
+}
+
+.cartridge-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(27,22,38,0.75);
+}
+
+.cartridge-play {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.cartridge:hover .cartridge-play {
+  color: var(--main-accent);
+}
+
+/* Cartridge Color Classes */
+.cartridge--clay .cartridge-notch, .cartridge--clay .cartridge-label { background: var(--clay); }
+.cartridge--moss .cartridge-notch, .cartridge--moss .cartridge-label { background: var(--moss); }
+.cartridge--teal .cartridge-notch, .cartridge--teal .cartridge-label { background: var(--teal); }
+.cartridge--aqua .cartridge-notch, .cartridge--aqua .cartridge-label { background: var(--aqua); }
+.cartridge--purple .cartridge-notch, .cartridge--purple .cartridge-label { background: var(--purple); }
+
+/* ==========================================
+   6. SIDEBAR & NAVIGATION LAYERS
+   ========================================== */
+#sidebar-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  background: var(--main-accent);
+  color: #000000;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 12px var(--main-accent);
+  transition: background 0.3s

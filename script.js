@@ -25,13 +25,22 @@ const CLOAK_PROFILES = {
 };
 
 // ==========================================
-// 2. HELPER FUNCTIONS
+// 2. HELPER FUNCTIONS & NAVIGATION
 // ==========================================
 function escapeHtml(str) {
   if (!str) return "";
   const div = document.createElement('div');
   div.textContent = str;
   return div.innerHTML;
+}
+
+// BACK TO SHELF FUNCTION (Tung Tung Tung Sahur Efficiency)
+function goToShelf() {
+  if (document.referrer && document.referrer.includes(window.location.host)) {
+    window.history.back();
+  } else {
+    window.location.href = 'index.html';
+  }
 }
 
 // ==========================================

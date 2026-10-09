@@ -365,27 +365,34 @@ code {
   transform: translateX(3px);
 }
 
-
-.back-btn {
+/* FLOATING BACK BUTTON (DEDICATED ID) */
+#floating-back-btn {
   position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1000;
-  background: var(--main-accent);
-  color: #000000;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-weight: bold;
+  top: 12px;
+  left: 12px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(18, 18, 20, 0.85);
+  color: #d1d5db;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 0 12px var(--main-accent);
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
-.back-btn:hover, .back-btn.active {
-  background: #27272a;
-  border-color: var(--main-accent);
-  transform: translateX(3px);
+#floating-back-btn:hover {
+  background: rgba(30, 30, 35, 0.95);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .layer-desc {

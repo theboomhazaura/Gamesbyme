@@ -263,7 +263,7 @@ const GAMES = [
     description: "a game about jumping (not mine)",
     color: "teal",
     image: "images/IMG_2497.jpeg",
-    embedUrl: "https://challengerush.com/",
+    embedUrl: "https://challengerush.github.io/",
     category: "Platformer"
   }
 ];

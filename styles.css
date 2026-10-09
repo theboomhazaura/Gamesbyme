@@ -419,6 +419,35 @@ code {
     margin-left: 0;
   }
 }
+/* BACK TO SHELF CONTAINER & BUTTON */
+.back-shelf-container {
+  max-width: 1200px;
+  margin: 15px auto 10px;
+  padding: 0 20px;
+}
+
+.back-shelf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  padding: 10px 18px;
+  background: var(--bg-raised, #18181b);
+  color: var(--main-accent, #00ff88);
+  border: 1px solid var(--card-border, #27272a);
+  border-radius: var(--radius, 8px);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-shelf-btn:hover {
+  transform: translateX(-4px);
+  border-color: var(--main-accent, #00ff88);
+  box-shadow: 0 0 10px var(--main-accent, #00ff88);
+}
 /* ==========================================
    7. THEME MODAL & INLINE SVG HEXAGON PALETTE
    ========================================== */

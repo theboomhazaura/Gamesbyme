@@ -434,11 +434,3 @@ code {
   transition: border-color 0.3s ease;
 }
 
-/* MAIN CONTENT WRAPPER */
-#main-content {
-  width: 100%;
-  min-height: 100vh;
-  padding: 20px;
-  background: transparent;
-  box-sizing: border-box;
-}

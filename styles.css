@@ -160,10 +160,10 @@ code {
 
 .shelf, #shelf-container, .shelf-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Scaled for 3-column sigma layout */
   gap: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -363,6 +363,30 @@ code {
   background: #27272a;
   border-color: var(--main-accent);
   transform: translateX(3px);
+}
+
+/* MAIN CONTENT SQUISH EFFECT WHEN SIDEBAR IS OPEN */
+#main-content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: transparent;
+  box-sizing: border-box;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 600px) {
+  body.sidebar-active #main-content {
+    margin-left: 33.33vw;
+    width: 66.67vw;
+  }
+}
+
+@media (max-width: 599px) {
+  body.sidebar-active #main-content {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 /* FLOATING BACK BUTTON (DEDICATED ID) */

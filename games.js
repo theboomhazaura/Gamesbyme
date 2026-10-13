@@ -56,6 +56,14 @@ const GAMES = [
     category: "Shooter"
   },
    {
+    title: "getaway shootout",
+    slug: "Getawayshootout",
+    description: "play getaway shootout on unblocktorium with no ads",
+    color: "teal",
+    image: "images/IMG_2618.jpeg",
+    category: "Shooter"
+  },
+   {
     title: "Angry birds",
     slug: "angrybirds",
     description: "use the slingshot to slingshot the birds to destroy the evil pigs tower",

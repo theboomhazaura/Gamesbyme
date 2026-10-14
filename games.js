@@ -95,6 +95,14 @@ const GAMES = [
     image: "images/IMG_2574.jpeg",
     category: "Driving"
   },
+   { 
+    title: "drift hunters",
+    slug: "Drifthunters",
+    description: "race cars in this legendary car game",
+    color: "purple",
+    image: "images/IMG_2619.jpeg",
+    category: "Driving"
+  },
     { 
     title: "ragdoll archers",
     slug: "ragdoll_archers",

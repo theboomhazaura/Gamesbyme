@@ -238,6 +238,32 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+function toggleFullScreen() {
+  const btn = document.getElementById('sidebar-btn') || event.target;
+  
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().then(() => {
+      if (btn) btn.innerHTML = "🖥️ Toggle Fullscreen: ON";
+    }).catch(err => {
+      console.error(`Error attempting to enable fullscreen: ${err.message}`);
+    });
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen().then(() => {
+        if (btn) btn.innerHTML = "🖥️ Toggle Fullscreen: OFF";
+      });
+    }
+  }
+}
+
+// Sync button text if user exits fullscreen via ESC key
+document.addEventListener('fullscreenchange', () => {
+  const btn = document.querySelector("button[onclick='toggleFullScreen()']");
+  if (btn) {
+    btn.innerHTML = document.fullscreenElement ? "🖥️ Toggle Fullscreen: ON" : "🖥️ Toggle Fullscreen: OFF";
+  }
+});
+
 // ==========================================
 // 6. INITIALIZATION ON LOAD
 // ==========================================

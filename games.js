@@ -111,6 +111,15 @@ const GAMES = [
     image: "images/IMG_2629.jpeg",
     category: "Driving"
   },
+  
+     { 
+    title: "stickman empires",
+    slug: "stickmanempires",
+    description: "defend your statue and destroy the other teams. not quite stickman empires but its the best i could do.",
+    color: "purple",
+    image: "images/IMG_2631.jpeg",
+    category: "other"
+  },
  
     { 
     title: "ragdoll archers",

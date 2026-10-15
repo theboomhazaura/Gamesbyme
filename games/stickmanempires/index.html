@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stickman Empires</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100vw; height: 100vh; background: #000; overflow: hidden; }
+    #container { width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+
+  <div id="container"></div>
+
+  <!-- Load Ruffle Emulator -->
+  <script src="ruffle.js"></script>
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("load", (event) => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      const container = document.getElementById("container");
+      container.appendChild(player);
+      
+      // Load your .swf file here
+      player.load("stickman-empires.swf");
+      
+      player.style.width = "100%";
+      player.style.height = "100%";
+    });
+  </script>
+</body>
+</html>

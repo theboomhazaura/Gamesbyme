@@ -108,7 +108,7 @@ const GAMES = [
     slug: "sonic2",
     description: "fully playable and unblocked sonic 2 on unblocktorium",
     color: "teal",
-    image: "images/IMG_2638.jpeg",
+    image: "images/IMG_2639.jpeg",
     category: "Platformer"
   },
    { 

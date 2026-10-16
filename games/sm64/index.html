@@ -3,27 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Super Mario 64 - Otherverse</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100vw; height: 100vh; background: #000; overflow: hidden; display: flex; justify-content: center; align-items: center; }
-    canvas { width: 100%; height: 100%; outline: none; }
-  </style>
-</head>
-<body>
-
-  <!-- The canvas where the WebAssembly port renders the game -->
-  <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
-
-  <script>
-    var Module = {
-      canvas: document.getElementById('canvas'),
-      print: (text) => console.log(text),
-      printErr: (text) => console.error(text),
-    };
-  </script>
   
-  <!-- Load the compiled WebAssembly game script -->
-  <script src="sm64.js"></script>
+  <!-- SEO Keywords & Search Title -->
+  <title>Super mario 64 Unblocked | Play Free on Unblocktorium</title>
+  <meta name="description" content="Play super mario 64 unblocked on Unblocktorium with fast speeds and high FPS.">
+  <meta name="keywords" content="super mario 64 unblocked, super mario 64, play super mario 64 free, unblocktorium super mario 64">
+  
+  <!-- Styles & Favicon -->
+  <link rel="icon" type="image/png" href="../../images/Favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body style="margin:0; padding:0; background:#000; overflow:hidden;">
+
+<!-- MINIMALIST FLOATING BACK BUTTON -->
+<button id="floating-back-btn" onclick="goToShelf()" title="Back to Shelf">
+  &larr; Shelf
+</button>
+  
+  <!-- Dummy iFrame Loading the Second HTML File -->
+  <iframe 
+    src="play.html" 
+    title="super mario 64 Game View"
+    style="width:100vw; height:100vh; border:none; display:block;"
+    allowfullscreen>
+  </iframe>
+
+  <!-- Runs tab cloaking & panic key logic across subpages -->
+  <script src="../../script.js"></script>
 </body>
 </html>

@@ -114,7 +114,7 @@ const GAMES = [
   
      { 
     title: "stickman empires",
-    slug: "stickmanempires",
+    slug: "stickwar2",
     description: "defend your statue and destroy the other teams. not quite stickman empires but its the best i could do.",
     color: "purple",
     image: "images/IMG_2631.jpeg",

@@ -96,6 +96,14 @@ const GAMES = [
     category: "Driving"
   },
    { 
+    title: "super mario 64",
+    slug: "sm64",
+    description: "fully playable and unblocked super mario 64 on unblocktorium",
+    color: "teal",
+    image: "images/IMG_2637.jpeg",
+    category: "Platformer"
+  },
+   { 
     title: "drift hunters",
     slug: "Drifthunters",
     description: "race cars in this legendary car game",

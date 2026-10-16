@@ -104,6 +104,14 @@ const GAMES = [
     category: "Platformer"
   },
    { 
+    title: "sonic 2",
+    slug: "sonic2",
+    description: "fully playable and unblocked sonic 2 on unblocktorium",
+    color: "teal",
+    image: "images/IMG_2638.jpeg",
+    category: "Platformer"
+  },
+   { 
     title: "drift hunters",
     slug: "Drifthunters",
     description: "race cars in this legendary car game",

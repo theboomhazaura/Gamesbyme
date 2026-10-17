@@ -87,6 +87,14 @@ const GAMES = [
     image: "images/IMG_2502.jpeg",
     category: "Platformer"
   },
+  { 
+    title: "minecraft",
+    slug: "minecraft",
+    description: "infinite wonders endless possibilities",
+    color: "moss",
+    image: "images/IMG_2640.jpeg",
+    category: "other"
+  },
    { 
     title: "smash karts",
     slug: "smashkarts",

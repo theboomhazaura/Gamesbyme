@@ -207,7 +207,7 @@ const GAMES = [
     description: "ride the sled and do not crash it",
     color: "teal",
     image: "images/IMG_2573.jpeg",
-    category: "driving"
+    category: "Driving"
   },
   { 
     title: "awesome tanks",

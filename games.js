@@ -6,6 +6,31 @@
 // color options: "clay" | "moss" | "teal"  (cycles automatically if omitted)
 
 const GAMES = [
+  { 
+    title: "minecraft",
+    slug: "minecraft",
+    description: "infinite wonders endless possibilities",
+    color: "moss",
+    image: "images/IMG_2640.jpeg",
+    category: "other"
+  },
+   { 
+    title: "gta vice city",
+    slug: "gtavicecity",
+    description: "play gta vice city unblocked on unblocktorium",
+    color: "purple",
+    image: "images/GTA-VICE-CITY.png",
+    embedUrl: "https://unblockedclassroomgames.gitlab.io/games/gta-vice-city/gta-vice-city.html",
+    category: "Shooter"
+  },
+  { 
+    title: "super mario 64",
+    slug: "sm64",
+    description: "fully playable and unblocked super mario 64 on unblocktorium",
+    color: "teal",
+    image: "images/IMG_2637.jpeg",
+    category: "Platformer"
+  },
   {
     title: "flight simulator",
     slug: "flightsim",
@@ -37,15 +62,6 @@ const GAMES = [
     color: "purple",
     image: "images/IMG_2496.jpeg",
     category: "GAMESBYME"
-  },
-   { 
-    title: "gta vice city",
-    slug: "gtavicecity",
-    description: "play gta vice city unblocked on unblocktorium",
-    color: "purple",
-    image: "images/GTA-VICE-CITY.png",
-    embedUrl: "https://unblockedclassroomgames.gitlab.io/games/gta-vice-city/gta-vice-city.html",
-    category: "Shooter"
   },
    {
     title: "DOOM",
@@ -87,14 +103,6 @@ const GAMES = [
     image: "images/IMG_2502.jpeg",
     category: "Platformer"
   },
-  { 
-    title: "minecraft",
-    slug: "minecraft",
-    description: "infinite wonders endless possibilities",
-    color: "moss",
-    image: "images/IMG_2640.jpeg",
-    category: "other"
-  },
    { 
     title: "smash karts",
     slug: "smashkarts",
@@ -102,14 +110,6 @@ const GAMES = [
     color: "teal",
     image: "images/IMG_2574.jpeg",
     category: "Driving"
-  },
-   { 
-    title: "super mario 64",
-    slug: "sm64",
-    description: "fully playable and unblocked super mario 64 on unblocktorium",
-    color: "teal",
-    image: "images/IMG_2637.jpeg",
-    category: "Platformer"
   },
    { 
     title: "sonic 2",

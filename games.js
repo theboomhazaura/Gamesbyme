@@ -234,7 +234,7 @@ const GAMES = [
     category: "Driving"
   },
   { 
-    title: "Escape Roads 2",
+    title: "Escape Roads",
     slug: "escaperoads",
     description: "drive a car in a city and avoid obstructions whilst being in an epic police chase",
     color: "moss",

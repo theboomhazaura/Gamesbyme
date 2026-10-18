@@ -1,16 +1,7 @@
 # Unblocktorium
 
-A tiny, static game hub. No build step, no framework — plain HTML/CSS/JS, ready to deploy on GitHub Pages.
-
-## Structure
-
-```
-index.html      the hub page (hero + shelf of cartridges)
-styles.css      all styling
-games.js        the list of games — this is the only file you edit to add a game
-script.js       renders cartridge cards from games.js
-games/          one folder per game, each with its own index.html
-```
+made for the gamers
+a highly advanced unblocked games site with games such as minecraft and gta vice city. has advanced clocking features and state of the art customisation and unriveled performance on chromebooks and iPads.
 
 ## Adding a game
 
@@ -29,7 +20,6 @@ games/          one folder per game, each with its own index.html
 
 4. Refresh `index.html` — a new cartridge card appears automatically, linking to `games/rocket-dodge/index.html`.
 
-There's a placeholder game at `games/example-game/` you can look at, edit, or delete.
 
 ## Deploying to GitHub Pages
 
@@ -52,4 +42,7 @@ There's a placeholder game at `games/example-game/` you can look at, edit, or de
 ## Notes
 
 - Everything is static, so any game you build with just HTML/CSS/JS will work.
-- Keep each game folder self-contained (its own assets, no shared globals) to avoid games clashing with each other.
+- Keep each game folder self-contained (its own assets, no shared globals) to avoid games clashing with each other. wasm works and you can link an iframe as well. has unblocktorium launcher which allows multiple versions of a game and combining multiple parts to bypass 25mb upload limit on GitHub.
+
+
+made by me :)

@@ -1,20 +1,20 @@
 const VERSIONS = [
   {
-    id: "26.3",
-    title: "26.3",
-    description: "Current Minecraft (heavy - best for high end devices)",
-    chunks: ["eagle-part1.bin", "eagle-part2.bin", "eagle-part3.bin"]
+    id: "escape roads 1",
+    title: "escape roads 1",
+    description: "first game in the seris",
+    chunks: ["escape-road.html.part1", "escape-road.html.part2"]
   },
   {
-    id: "1.88",
-    title: "1.88",
-    description: "a good compremise between stability and fetures",
-    chunks: ["EaglercraftX_1.8.html"]
+    id: "escape roads 2",
+    title: "escape roads 2",
+    description: "2nd game in the seris, has more fetures than 1",
+    chunks: ["escape-road-2.html.part1", "escape-road-2.html.part2"]
   },
   {
-    id: "1.52",
-    title: "1.52 - redstone update",
-    description: "runs well on chromebooks but has less fetures then other versions",
-    chunks: ["Offline_Download_Version.html"]
+    id: "escape roads 3",
+    title: "escape roads 3",
+    description: "3rd game in the seris - most feture rich and still runs well on ipads and chromebooks",
+    chunks: ["escape-road-3.html.part1", "escape-road-3.html.part2"]
   }
 ];

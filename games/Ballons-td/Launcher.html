@@ -83,36 +83,45 @@
 
   <!-- Load your external configuration -->
   <script src="launcher.js"></script>
-  <script>
+ <script>
     // Populate version cards on load
     document.addEventListener("DOMContentLoaded", () => {
       const grid = document.getElementById("versionGrid");
-      VERSIONS.forEach(ver => {
-        const card = document.createElement("div");
-        card.className = "version-card";
-        card.onclick = () => launchVersion(ver.id);
-        card.innerHTML = `<h3>${ver.title}</h3><span>${ver.description}</span>`;
-        grid.appendChild(card);
-      });
+      if (typeof VERSIONS !== "undefined") {
+        VERSIONS.forEach(ver => {
+          const card = document.createElement("div");
+          card.className = "version-card";
+          card.onclick = () => launchVersion(ver.id);
+          card.innerHTML = `<h3>${ver.title}</h3><span>${ver.description}</span>`;
+          grid.appendChild(card);
+        });
+      }
     });
 
     async function launchVersion(versionId) {
       document.getElementById('launcher-container').style.display = 'none';
       document.getElementById('loader').style.display = 'block';
 
-      // Find the selected version object from launcher.js
       const selected = VERSIONS.find(v => v.id === versionId);
       if (!selected) throw new Error("Version not found!");
 
       try {
-        const responses = await Promise.all(selected.chunks.map(url => fetch(url)));
-        for (const res of responses) {
-          if (!res.ok) throw new Error(`Failed to fetch chunk: ${res.status}`);
-        }
+        let htmlUrl;
 
-        const buffers = await Promise.all(responses.map(res => res.arrayBuffer()));
-        const htmlBlob = new Blob(buffers, { type: "text/html" });
-        const htmlUrl = URL.createObjectURL(htmlBlob);
+        // If it's a single file, we can load it directly or via blob
+        if (selected.chunks.length === 1 && selected.chunks[0].endsWith('.html')) {
+          htmlUrl = selected.chunks[0];
+        } else {
+          // Fetch all binary chunks and stitch them into a Blob in RAM
+          const responses = await Promise.all(selected.chunks.map(url => fetch(url)));
+          for (const res of responses) {
+            if (!res.ok) throw new Error(`Failed to fetch chunk: ${res.status}`);
+          }
+
+          const buffers = await Promise.all(responses.map(res => res.arrayBuffer()));
+          const htmlBlob = new Blob(buffers, { type: "text/html" });
+          htmlUrl = URL.createObjectURL(htmlBlob);
+        }
 
         const frame = document.getElementById('gameFrame');
         frame.src = htmlUrl;
@@ -123,7 +132,7 @@
         frame.onload = () => {
           frame.contentWindow.focus();
         };
-      } catch (err) {
+      }- catch (err) {
         document.getElementById('loader').innerText = "❌ Launch failed: " + err.message;
         console.error(err);
       }

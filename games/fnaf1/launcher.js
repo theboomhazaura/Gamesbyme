@@ -28,4 +28,5 @@ const VERSIONS = [
     title: "five nights at freddy's sister location",
     description: "5th game in the seris. ",
     chunks: ["fnaf-sister-location.html.part1"], ["fnaf-sister-location.html.part2"], ["fnaf-sister-location.html.part3"]
+  }
 ];

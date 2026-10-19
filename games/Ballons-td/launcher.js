@@ -1,20 +1,32 @@
 const VERSIONS = [
   {
-    id: "26.3",
-    title: "26.3",
-    description: "Current Minecraft (heavy - best for high end devices)",
-    chunks: ["eagle-part1.bin", "eagle-part2.bin", "eagle-part3.bin"]
+    id: "btd-1",
+    title: "bloons tower defence 1",
+    description: "first game in the seris. simple and iconic.",
+    chunks: ["bloons-TD.html"]
   },
   {
-    id: "1.88",
-    title: "1.88",
-    description: "a good compremise between stability and fetures",
-    chunks: ["EaglercraftX_1.8.html"]
+    id: "BTD-2",
+    title: "bloons tower defence 2",
+    description: "2nd game in the seris",
+    chunks: ["bloons-TD-2.html"]
   },
   {
-    id: "1.52",
-    title: "1.52 - redstone update",
-    description: "runs well on chromebooks but has less fetures then other versions",
-    chunks: ["Offline_Download_Version.html"]
+    id: "BTD-3",
+    title: "bloons tower defence 3",
+    description: "3rd game in the seris",
+    chunks: ["bloon-TD-3.html"]
+  },
+   {
+    id: "BTD-4",
+    title: "bloons tower defence 4",
+    description: "4nd game in the seris",
+    chunks: ["bloons-TD-4.html"]
+  },
+   {
+    id: "BTD-5",
+    title: "bloons tower defence 5",
+    description: "5nd and final game in the seris. has the most fetures but can lag on very low power devices.",
+    chunks: ["bloons-TD-5.html"]
   }
 ];

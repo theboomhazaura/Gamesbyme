@@ -24,12 +24,12 @@ const GAMES = [
     category: "Shooter"
   },
   { 
-    title: "super mario 64",
-    slug: "sm64",
-    description: "fully playable and unblocked super mario 64 on unblocktorium",
-    color: "teal",
-    image: "images/IMG_2637.jpeg",
-    category: "Platformer"
+    title: "five nights at freddys",
+    slug: "fnaf1",
+    description: "survive 5 nights at freddys, play games 1 to 4 and sister location.",
+    color: "clay",
+    image: "images/IMG_2498.jpeg",
+    category: "Horror"
   },
   {
     title: "flight simulator",
@@ -120,6 +120,14 @@ const GAMES = [
     category: "Driving"
   },
    { 
+    title: "super mario 64",
+    slug: "sm64",
+    description: "fully playable and unblocked super mario 64 on unblocktorium",
+    color: "teal",
+    image: "images/IMG_2637.jpeg",
+    category: "Platformer"
+  },
+   { 
     title: "sonic 2",
     slug: "sonic2",
     description: "fully playable and unblocked sonic 2 on unblocktorium",
@@ -192,14 +200,6 @@ const GAMES = [
     color: "teal",
     image: "images/IMG_2589.jpeg",
     category: "Shooter"
-  },
-  { 
-    title: "five nights at freddys 1",
-    slug: "fnaf1",
-    description: "survive 5 nights at freddys",
-    color: "clay",
-    image: "images/IMG_2498.jpeg",
-    category: "Horror"
   },
   { 
     title: "Cookie Clicker",

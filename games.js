@@ -68,7 +68,7 @@ const GAMES = [
     slug: "Ballons-td",
     description: "play BTD 1 through 5 and shoot as many ballons as you can",
     color: "purple",
-    image: "images/IMG_2643.jpeg",
+    image: "images/IMG_2646.jpeg",
     category: "other"
   },
    {

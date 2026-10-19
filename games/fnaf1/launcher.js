@@ -9,13 +9,13 @@ const VERSIONS = [
     id: "fnaf 2",
     title: "five nights at freddy's 2",
     description: "2st game in the seris. survive freddy, foxy, bonnie, and chika, and there toy vareints. also fetures puppet.",
-    chunks: ["fnaf-2.html.part1"], ["fnaf-2.html.part2"]
+    chunks: ["fnaf-2.html.part1", "fnaf-2.html.part2"]
   },
   {
     id: "fnaf 3",
     title: "five nights at freddy's 3",
     description: "3rd game in the seris. survive springtrap in this stressful game.",
-    chunks: ["fnaf-3.html.part1"], ["fnaf-3.html.part2"]
+    chunks: ["fnaf-3.html.part1", "fnaf-3.html.part2"]
   },
   {
     id: "fnaf 4",
@@ -27,6 +27,6 @@ const VERSIONS = [
     id: "fnaf sister location",
     title: "five nights at freddy's sister location",
     description: "5th game in the seris. ",
-    chunks: ["fnaf-sister-location.html.part1"], ["fnaf-sister-location.html.part2"], ["fnaf-sister-location.html.part3"]
+    chunks: ["fnaf-sister-location.html.part1", "fnaf-sister-location.html.part2", "fnaf-sister-location.html.part3"]
   }
 ];

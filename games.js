@@ -63,6 +63,14 @@ const GAMES = [
     image: "images/IMG_2496.jpeg",
     category: "GAMESBYME"
   },
+  {
+    title: "bloons tower defence",
+    slug: "Ballons-td",
+    description: "play BTD 1 through 5 and shoot as many ballons as you can",
+    color: "purple",
+    image: "images/IMG_2643.jpeg",
+    category: "other"
+  },
    {
     title: "DOOM",
     slug: "Doom",

@@ -15,7 +15,7 @@ const VERSIONS = [
     id: "BTD-3",
     title: "bloons tower defence 3",
     description: "3rd game in the seris",
-    chunks: ["bloon-TD-3.html"]
+    chunks: ["bloons-TD-3.html"]
   },
    {
     id: "BTD-4",

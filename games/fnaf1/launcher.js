@@ -1,20 +1,8 @@
 const VERSIONS = [
   {
-    id: "26.3",
-    title: "26.3",
-    description: "Current Minecraft (heavy - best for high end devices)",
-    chunks: ["eagle-part1.bin", "eagle-part2.bin", "eagle-part3.bin"]
-  },
-  {
-    id: "1.88",
-    title: "1.88",
-    description: "a good compremise between stability and fetures",
-    chunks: ["EaglercraftX_1.8.html"]
-  },
-  {
-    id: "1.52",
-    title: "1.52 - redstone update",
-    description: "runs well on chromebooks but has less fetures then other versions",
-    chunks: ["Offline_Download_Version.html"]
+    id: "fnaf 1",
+    title: "five nights at freddy's 1",
+    description: "1st game in the seris. survive freddy, foxy, bonnie, and chika.",
+    chunks: ["play.html"]
   }
 ];

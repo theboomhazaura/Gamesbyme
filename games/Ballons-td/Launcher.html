@@ -81,9 +81,9 @@
   <div id="loader">⚡ Assembling version chunks in browser RAM...</div>
   <iframe id="gameFrame"></iframe>
 
-  <!-- Load your external configuration -->
+<!-- Load your external configuration -->
   <script src="launcher.js"></script>
- <script>
+  <script>
     // Populate version cards on load
     document.addEventListener("DOMContentLoaded", () => {
       const grid = document.getElementById("versionGrid");
@@ -95,6 +95,8 @@
           card.innerHTML = `<h3>${ver.title}</h3><span>${ver.description}</span>`;
           grid.appendChild(card);
         });
+      } else {
+        console.error("VERSIONS array not found! Check if launcher.js is loaded correctly.");
       }
     });
 
@@ -108,11 +110,10 @@
       try {
         let htmlUrl;
 
-        // If it's a single file, we can load it directly or via blob
+        // If it's a single file, load it directly; otherwise merge chunks in RAM
         if (selected.chunks.length === 1 && selected.chunks[0].endsWith('.html')) {
           htmlUrl = selected.chunks[0];
         } else {
-          // Fetch all binary chunks and stitch them into a Blob in RAM
           const responses = await Promise.all(selected.chunks.map(url => fetch(url)));
           for (const res of responses) {
             if (!res.ok) throw new Error(`Failed to fetch chunk: ${res.status}`);
@@ -132,7 +133,7 @@
         frame.onload = () => {
           frame.contentWindow.focus();
         };
-      }- catch (err) {
+      } catch (err) {
         document.getElementById('loader').innerText = "❌ Launch failed: " + err.message;
         console.error(err);
       }

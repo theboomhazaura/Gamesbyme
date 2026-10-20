@@ -16,7 +16,7 @@ const GAMES = [
   },
    { 
     title: "gta vice city",
-    slug: "gtavicecity",
+    slug: "Farmlife",
     description: "play gta vice city unblocked on unblocktorium",
     color: "purple",
     image: "images/GTA-VICE-CITY.png",

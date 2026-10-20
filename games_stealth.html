@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document - Google Docs</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f8f9fa;
+      font-family: Arial, sans-serif;
+      color: #202124;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .doc-page {
+      background: #ffffff;
+      width: 100%;
+      max-width: 816px;
+      min-height: 1056px;
+      padding: 60px 80px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      border: 1px solid #dadce0;
+    }
+
+    .doc-header {
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .doc-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #202124;
+    }
+
+    .back-btn {
+      color: #1a73e8;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 8px 12px;
+      margin-bottom: 20px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      outline: none;
+    }
+    .search-input:focus { border-color: #1a73e8; }
+
+    .games-list {
+      list-style-type: decimal;
+      padding-left: 20px;
+    }
+
+    .games-list li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .game-link {
+      color: #1a73e8;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .game-link:hover { color: #0b57d0; }
+
+    #stealthFrame {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      z-index: 9999;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="doc-page">
+    <div class="doc-header">
+      <span class="doc-title">Document Directory - Full Index</span>
+      <span class="back-btn" onclick="window.location.href='doc_stealth.html'">◀ Return to Document</span>
+    </div>
+
+    <input type="text" id="stealthSearch" class="search-input" placeholder="Search entries..." onkeyup="filterStealthGames()">
+
+    <ol id="stealthGamesList" class="games-list">
+      <!-- Plain text game links populated dynamically from games.js -->
+    </ol>
+  </div>
+
+  <iframe id="stealthFrame"></iframe>
+
+  <!-- Link your scripts -->
+  <script src="games.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Auto tab-cloak to Google Docs
+      if (typeof setTabCloak === "function") {
+        setTabCloak("docs");
+      }
+
+      renderStealthList();
+    });
+
+    function renderStealthList(filter = "") {
+      const listContainer = document.getElementById("stealthGamesList");
+      listContainer.innerHTML = "";
+
+      const gamesList = (typeof GAMES !== 'undefined' && Array.isArray(GAMES)) ? GAMES : [];
+
+      const filtered = gamesList.filter(g => g && g.title && g.title.toLowerCase().includes(filter.toLowerCase()));
+
+      if (filtered.length === 0) {
+        listContainer.innerHTML = "<p style='color: #5f6368;'>No matching entries found.</p>";
+        return;
+      }
+
+      filtered.forEach(game => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.className = "game-link";
+        a.innerText = game.title;
+
+        // Determine destination URL
+        let targetUrl = "#";
+        if (game.embedUrl) {
+          targetUrl = game.embedUrl;
+        } else if (game.slug) {
+          targetUrl = `games/${game.slug}/index.html`;
+        }
+
+        a.onclick = (e) => {
+          e.preventDefault();
+          launchStealthGame(targetUrl);
+        };
+
+        li.appendChild(a);
+        listContainer.appendChild(li);
+      });
+    }
+
+    function filterStealthGames() {
+      const q = document.getElementById("stealthSearch").value;
+      renderStealthList(q);
+    }
+
+    function launchStealthGame(url) {
+      const frame = document.getElementById("stealthFrame");
+      frame.src = url;
+      frame.style.display = "block";
+      frame.onload = () => frame.contentWindow.focus();
+    }
+  </script>
+</body>
+</html>

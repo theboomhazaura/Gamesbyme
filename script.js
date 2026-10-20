@@ -264,6 +264,44 @@ document.addEventListener('fullscreenchange', () => {
   }
 });
 
+// Shared dynamic iframe loader
+function loadGameFrame(targetUrl) {
+  // Hide launcher UI if it exists on the page
+  const launcherContainer = document.getElementById('launcher-container');
+  if (launcherContainer) {
+    launcherContainer.style.display = 'none';
+  }
+
+  // Hide loader if it exists
+  const loader = document.getElementById('loader');
+  if (loader) {
+    loader.style.display = 'none';
+  }
+
+  // Get or create the game iframe
+  let frame = document.getElementById('gameFrame');
+  if (!frame) {
+    frame = document.createElement('iframe');
+    frame.id = 'gameFrame';
+    frame.style.cssText = "width: 100vw; height: 100vh; border: none; position: absolute; top: 0; left: 0;";
+    document.body.appendChild(frame);
+  }
+
+  // Inject the target URL
+  frame.src = targetUrl;
+  frame.style.display = 'block';
+
+  // Show back button if it exists
+  const backBtn = document.getElementById('backBtn');
+  if (backBtn) {
+    backBtn.style.display = 'block';
+  }
+
+  // Auto-focus the frame for controls
+  frame.onload = () => {
+    frame.contentWindow.focus();
+  };
+}
 // ==========================================
 // 6. INITIALIZATION ON LOAD
 // ==========================================

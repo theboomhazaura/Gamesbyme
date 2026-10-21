@@ -79,6 +79,14 @@ const GAMES = [
     image: "images/doom.png",
     category: "Shooter"
   },
+    {
+    title: "ducklife",
+    slug: "ducklife",
+    description: "train your duck into a racing duck",
+    color: "purple",
+    image: "images/IMG_2657.jpeg",
+    category: "Idle"
+  },
    {
     title: "getaway shootout",
     slug: "Getawayshootout",

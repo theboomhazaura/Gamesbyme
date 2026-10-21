@@ -1,20 +1,20 @@
 const VERSIONS = [
   {
-    id: "26.3",
-    title: "26.3",
-    description: "Current Minecraft (heavy - best for high end devices)",
-    chunks: ["eagle-part1.bin", "eagle-part2.bin", "eagle-part3.bin"]
+    id: "ducklife 1",
+    title: "ducklife 1",
+    description: "first ducklife game",
+    chunks: ["ducklife.html"]
   },
   {
-    id: "1.88",
-    title: "1.88",
-    description: "a good compremise between stability and fetures",
-    chunks: ["EaglercraftX_1.8.html"]
+    id: "ducklife 2",
+    title: "ducklife 2",
+    description: "the 2nd game in the seris",
+    chunks: ["ducklife2.html"]
   },
   {
-    id: "1.52",
-    title: "1.52 - redstone update",
-    description: "runs well on chromebooks but has less fetures then other versions",
-    chunks: ["Offline_Download_Version.html"]
+    id: "ducklife 3",
+    title: "ducklife 3",
+    description: "3rd game in the sires",
+    chunks: ["ducklife3.html"]
   }
 ];

@@ -168,6 +168,32 @@ code {
   padding: 20px;
 }
 
+/* GAME INPUT TAG BADGES */
+.cartridge-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-kbd-req {
+  background: #ff4757;
+  color: #fff;
+}
+
+.tag-kbd-opt {
+  background: #ffa502;
+  color: #1e1e1e;
+}
+
+.tag-mobile {
+  background: #2ed573;
+  color: #fff;
+}
 /* ==========================================
    5. CARTRIDGE & GAME CARDS
    ========================================== */

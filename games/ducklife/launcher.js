@@ -16,5 +16,17 @@ const VERSIONS = [
     title: "ducklife 3",
     description: "3rd game in the sires",
     chunks: ["ducklife3.html"]
+  },
+  {
+    id: "ducklife 4",
+    title: "ducklife 4",
+    description: "4th ducklife game",
+    chunks: ["ducklife4.html"]
+  },
+  {
+    id: "ducklife 5",
+    title: "ducklife 5",
+    description: "the 5th game in the seris",
+    chunks: ["ducklife5.html"]
   }
 ];

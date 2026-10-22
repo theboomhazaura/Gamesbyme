@@ -229,6 +229,17 @@ function toggleTheme() {
   }
 }
 
+// TAG DICTIONARY WITH AURA BADGES
+const INPUT_TAGS = {
+  "keyboard-required": { label: "⌨️ Keyboard Required", badgeClass: "tag-kbd-req" },
+  "better-on-keyboard": { label: "⌨️ Better on Keyboard", badgeClass: "tag-kbd-opt" },
+  "mobile-optimized": { label: "📱 Mobile Optimized", badgeClass: "tag-mobile" }
+};
+
+function getInputTagLabel(tagKey) {
+  return INPUT_TAGS[tagKey] ? INPUT_TAGS[tagKey].label : "";
+}
+
 // Global Panic Key Switch
 window.addEventListener('keydown', (e) => {
   if (e.code === 'Backquote' || e.key === '~') {

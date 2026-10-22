@@ -229,6 +229,14 @@ function toggleTheme() {
   }
 }
 
+filtered.forEach((game, index) => {
+  const li = document.createElement("li");
+  const tagLabel = game.inputTag ? ` [${getInputTagLabel(game.inputTag)}]` : '';
+  
+  li.innerHTML = `${index + 1}. <span class="doc-link" onclick="launchDocGame('${game.url}')">${escapeHtml(game.title)}</span> <small style="color: #5f6368;">${tagLabel}</small>`;
+  listContainer.appendChild(li);
+});
+
 // TAG DICTIONARY WITH AURA BADGES
 const INPUT_TAGS = {
   "keyboard-required": { label: "⌨️ Keyboard Required", badgeClass: "tag-kbd-req" },
@@ -239,6 +247,22 @@ const INPUT_TAGS = {
 function getInputTagLabel(tagKey) {
   return INPUT_TAGS[tagKey] ? INPUT_TAGS[tagKey].label : "";
 }
+
+const tagData = INPUT_TAGS[game.inputTag];
+const tagBadge = tagData 
+  ? `<span class="cartridge-tag ${tagData.badgeClass}">${tagData.label}</span>` 
+  : '';
+
+card.innerHTML = `
+  <div class="cartridge-notch"></div>
+  <div class="cartridge-label">
+    ${imgElement}
+    ${tagBadge}
+    <h2 class="cartridge-title">${escapeHtml(title)}</h2>
+    <p class="cartridge-desc">${escapeHtml(desc)}</p>
+  </div>
+  <span class="cartridge-play">Play &rarr;</span>
+`;
 
 // Global Panic Key Switch
 window.addEventListener('keydown', (e) => {

@@ -183,6 +183,17 @@ function renderShelf(categoryFilter = "all") {
   });
 }
 
+let touchOverlayEnabled = localStorage.getItem('unblocktorium_touch') === 'true';
+
+function toggleTouchControls() {
+  touchOverlayEnabled = !touchOverlayEnabled;
+  localStorage.setItem('unblocktorium_touch', touchOverlayEnabled);
+  
+  const btn = document.getElementById('touchToggleBtn');
+  if (btn) {
+    btn.innerHTML = touchOverlayEnabled ? "📱 Touch Overlay: ON" : "📱 Touch Overlay: OFF";
+  }
+}
 // ==========================================
 // 5. UI CONTROLS & THEME TOGGLE
 // ==========================================

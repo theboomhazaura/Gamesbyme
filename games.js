@@ -183,7 +183,7 @@ const GAMES = [
     slug: "Polytrack",
     description: "race cars and build your own track",
     color: "purple",
-       inputTag: "keyboard-required", // ⌨️ Keyboard Required
+       inputTag: "mobile-optimized", 
     image: "images/IMG_2629.jpeg",
     category: "Driving"
   },
@@ -311,7 +311,7 @@ const GAMES = [
     slug: "slope",
     description: "play as a ball and dont fall",
     color: "teal",
-    inputTag: "better-on-keyboard", // ⌨️ Keyboard better
+    inputTag: "keyboard-required", 
     image: "images/IMG_2536.jpeg",
     category: "Platformer"
   },

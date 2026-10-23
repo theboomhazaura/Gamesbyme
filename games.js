@@ -98,6 +98,15 @@ const GAMES = [
     category: "Idle"
   },
    {
+    title: "demon slayer",
+    slug: "demonslayer",
+    description: "play demon slayer on unblocktorium",
+    color: "purple",
+      inputTag: "keyboard-required", // ⌨️ Keyboard Required
+    image: "images/IMG_2660.jpeg",
+    category: "other"
+  },
+   {
     title: "getaway shootout",
     slug: "Getawayshootout",
     description: "play getaway shootout on unblocktorium with no ads",

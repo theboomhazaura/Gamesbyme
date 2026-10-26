@@ -80,6 +80,15 @@ const GAMES = [
     category: "other"
   },
    {
+    title: "spacewaves",
+    slug: "spacewaves",
+    description: "beat the levels in this fun platformer",
+    color: "purple",
+    inputTag: "mobile-optimized",
+    image: "images/IMG_2661.jpeg",
+    category: "Platformer"
+  },
+   {
     title: "DOOM",
     slug: "Doom",
     description: "play this retro shooter and shoot the monsters",

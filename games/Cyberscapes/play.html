@@ -75,6 +75,20 @@
 </div>
 <div id="crash">Crashed<br><span style="font-size:13px; letter-spacing:2px; opacity:0.8;">restarting…</span></div>
 
+<!-- On-Screen Touch Controller Overlay -->
+<div id="touch-controls" style="display: none;">
+  <div class="touch-btn" ontouchstart="simulateKey('ArrowLeft', 'down')" ontouchend="simulateKey('ArrowLeft', 'up')">◀</div>
+  <div class="touch-btn" ontouchstart="simulateKey('ArrowRight', 'down')" ontouchend="simulateKey('ArrowRight', 'up')">▶</div>
+  <div class="touch-btn" ontouchstart="simulateKey('Space', 'down')" ontouchend="simulateKey('Space', 'up')">⎵</div>
+</div>
+
+<script>
+  // Check if touch overlay is turned on in settings
+  if (localStorage.getItem('unblocktorium_touch') === 'true') {
+    document.getElementById('touch-controls').style.display = 'flex';
+  }
+</script>
+  
 <script>
 /**
  * @license

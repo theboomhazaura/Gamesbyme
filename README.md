@@ -12,8 +12,45 @@ a highly advanced unblocked games site with games such as minecraft and gta vice
 ## Adding a game
 
 1. Make a folder under `games/`, named with a URL-friendly slug, e.g. `games/rocket-dodge/`.
-2. Put that game's `index.html` (and any css/js it needs) inside that folder. It can be entirely self-contained.
-3. Open `games.js` and add one entry:
+2. use this template to create an index.html
+   ```html
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Keywords & Search Title -->
+  <title>Cyberscapes | Play Free on Unblocktorium</title>
+  <meta name="description" content="Play Cyberscapes unblocked on Unblocktorium with fast speeds and high FPS.">
+  <meta name="keywords" content="Cyberscapes unblocked, Cyberscapes, play Cyberscapes free, unblocktorium Cyberscapes">
+  
+  <!-- Styles & Favicon -->
+  <link rel="icon" type="image/png" href="../../images/Favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body style="margin:0; padding:0; background:#000; overflow:hidden;">
+
+<!-- MINIMALIST FLOATING BACK BUTTON -->
+<button id="floating-back-btn" onclick="goToShelf()" title="Back to Shelf">
+  &larr; Shelf
+</button>
+
+<!-- Dummy iFrame Loading the Second HTML File -->
+<iframe 
+  src="play.html" 
+  title="Cyberscapes Game View"
+  style="width:100vw; height:100vh; border:none; display:block;"
+  allowfullscreen>
+</iframe>
+
+<!-- Runs tab cloaking & panic key logic across subpages -->
+<script src="../../script.js"></script>
+</body>
+</html>
+
+4. Put that game's `play.html` (and any css/js it needs) inside that folder. It can be entirely self-contained.
+6. Open `games.js` and add one entry:
 
    ```js
    {
@@ -24,7 +61,7 @@ a highly advanced unblocked games site with games such as minecraft and gta vice
    },
    ```
 
-4. Refresh `index.html` — a new cartridge card appears automatically, linking to `games/rocket-dodge/index.html`.
+7. Refresh `index.html` — a new cartridge card appears automatically, linking to `games/rocket-dodge/index.html`.
 
 
 ## Deploying to GitHub Pages

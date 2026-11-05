@@ -3,6 +3,11 @@
 made for the gamers
 a highly advanced unblocked games site with games such as minecraft and gta vice city. has advanced clocking features and state of the art customisation and unriveled performance on chromebooks and iPads.
 
+## how to deploy
+1. fork the repository on GitHub
+2. deploy to GitHub pages
+3. check to make sure everything works. it should.
+
 ## Adding a game
 
 1. Make a folder under `games/`, named with a URL-friendly slug, e.g. `games/rocket-dodge/`.

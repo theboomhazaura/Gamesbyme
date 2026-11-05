@@ -7,6 +7,7 @@ a highly advanced unblocked games site with games such as minecraft and gta vice
 1. fork the repository on GitHub
 2. deploy to GitHub pages
 3. check to make sure everything works. it should.
+4. then make changes
 
 ## Adding a game
 

@@ -134,6 +134,15 @@ const GAMES = [
     category: "other"
   },
    {
+    title: "google baseball",
+    slug: "Googlebaseball",
+    description: "get as many runs as you can",
+    color: "moss",
+     inputTag: "mobile-optimized",
+    image: "images/IMG_2688.jpeg",
+    category: "other"
+  },
+   {
     title: "crossy road",
     slug: "crossyroad",
     description: "why did the chicken cross the road? to get to the other side!",

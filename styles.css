@@ -131,6 +131,71 @@ code {
   display: none;
 }
 
+/* TOUCH OVERLAY CONTAINER */
+.virtual-gamepad {
+  display: none; /* Shown dynamically on mobile or via menu toggle */
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  height: 180px;
+  pointer-events: none; /* Keeps background clickable */
+  z-index: 99999;
+  user-select: none;
+  touch-action: none; /* Prevents page scrolling on touch */
+}
+
+/* DPAD LAYOUT */
+.dpad-container {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  width: 150px;
+  height: 150px;
+  pointer-events: auto;
+}
+
+.vbtn {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+
+.vbtn:active {
+  background: var(--main-accent, #ff0055);
+}
+
+.dpad-up { top: 0; left: 50px; width: 50px; height: 50px; }
+.dpad-down { bottom: 0; left: 50px; width: 50px; height: 50px; }
+.dpad-left { top: 50px; left: 0; width: 50px; height: 50px; }
+.dpad-right { top: 50px; right: 0; width: 50px; height: 50px; }
+
+/* ACTION BUTTONS LAYOUT */
+.action-container {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.action-btn {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
 /* ==========================================
    4. SEARCH & GAME SHELF GRID
    ========================================== */

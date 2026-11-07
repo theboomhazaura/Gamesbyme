@@ -36,6 +36,67 @@ function getInputTagLabel(tagKey) {
 }
 
 // ==========================================
+// MOBILE VIRTUAL CONTROLLER SYSTEM
+// ==========================================
+
+function initVirtualGamepad() {
+  const buttons = document.querySelectorAll('.vbtn');
+
+  buttons.forEach(btn => {
+    const key = btn.getAttribute('data-key');
+
+    // Trigger keypress on touch down
+    btn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      simulateKeyEvent('keydown', key);
+    });
+
+    // Release keypress on touch lift
+    btn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      simulateKeyEvent('keyup', key);
+    });
+  });
+}
+
+// Dispatches native keyboard event into the window
+function simulateKeyEvent(type, keyCode) {
+  const event = new KeyboardEvent(type, {
+    key: keyCode === 'Space' ? ' ' : keyCode.replace('Key', ''),
+    code: keyCode,
+    bubbles: true,
+    cancelable: true
+  });
+
+  // Target active game iframe or main document window
+  const activeFrame = document.querySelector('iframe');
+  if (activeFrame && activeFrame.contentWindow) {
+    activeFrame.contentWindow.dispatchEvent(event);
+  } else {
+    window.dispatchEvent(event);
+  }
+}
+
+// Auto-detect mobile devices or use sidebar toggle switch
+function toggleTouchControls() {
+  const pad = document.getElementById('virtual-gamepad');
+  if (pad) {
+    const isHidden = pad.style.display === 'none' || pad.style.display === '';
+    pad.style.display = isHidden ? 'block' : 'none';
+  }
+}
+
+// Initialize listeners on DOM Load
+document.addEventListener('DOMContentLoaded', () => {
+  initVirtualGamepad();
+  
+  // Auto-enable for touch devices
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    toggleTouchControls();
+  }
+});
+
+// ==========================================
 // 2. HELPER FUNCTIONS & NAVIGATION
 // ==========================================
 function escapeHtml(str) {

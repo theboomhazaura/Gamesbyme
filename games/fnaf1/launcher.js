@@ -32,7 +32,7 @@ const VERSIONS = [
    {
     id: "fnaf UCN",
     title: "fnaf ultamate custom night",
-    description: "we got fnaf UCN on unblocktorium before Cgta 6. ",
+    description: "fnaf ucn on unblocktorium ",
     chunks: ["fnaf-UCN.html]
   }
 ];

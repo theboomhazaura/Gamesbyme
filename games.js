@@ -205,6 +205,16 @@ const GAMES = [
     image: "images/IMG_2629.jpeg",
     category: "Driving"
   },
+
+    { 
+    title: "mud rider",
+    slug: "Mudrider",
+    description: "play mud rider on unblocktorium",
+    color: "purple",
+       inputTag: "mobile-optimized", 
+    category: "Driving"
+  },
+  
   
      { 
     title: "stickman empires",
